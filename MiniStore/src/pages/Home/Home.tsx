@@ -1,4 +1,5 @@
 // import React from 'react';
+import Nav from '../../components/Nav/Nav';
 import {
     Conteiner
 } from './StyleHome';
@@ -6,6 +7,7 @@ import {
 const Home = () => {
   return (
     <Conteiner>
+      <Nav />
         <h1>Home</h1>
     </Conteiner>
   )

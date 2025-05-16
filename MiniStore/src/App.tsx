@@ -1,5 +1,7 @@
 // src/App.tsx
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import './App.css';
 import Home from './pages/Home/Home';
 // import About from './pages/About/About';
@@ -12,6 +14,11 @@ import Home from './pages/Home/Home';
 // import Contact from './pages/Contact/Contact';
 
 function App() {
+  const [loadingDone, setLoadingDone] = useState(false);
+
+   if (!loadingDone) {
+    return <LoadingScreen onFinish={() => setLoadingDone(true)} />;
+   }
   return (
     <Routes>
       <Route path="/" element={<Home />} />
