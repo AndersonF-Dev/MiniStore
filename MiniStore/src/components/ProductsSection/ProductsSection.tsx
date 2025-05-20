@@ -1,52 +1,4 @@
-// import React from 'react'
-// import { FaShoppingCart } from 'react-icons/fa';
-// import produto1 from '../../assets/img/v14_573.png'
-// import ProductsCarousel from './ProductsCarousel';
-// import {
-//     Wrapper,
-//     TitleBtnWrapper,
-//     TitleSection,
-//     BtnGoShop,
-// } from './styleProductsSection'
 
-// const ProductsSection = () => {
-//   return (
-//     <Wrapper>
-//         <TitleBtnWrapper>
-        
-//             <TitleSection>
-//                 Produtos Móveis
-//             </TitleSection>
-//             <BtnGoShop>
-//                 Ir para a loja
-//             </BtnGoShop>
-//         </TitleBtnWrapper>
-//         {/* <ItemsSliderWrapper>
-//             <ItemsCardsConteiner>
-//                 <ImageWrapper>
-//                     <ImgProduct src={produto1} alt='Iphone 10'/>
-//                     <BtnAddCart>
-//                         Adicionar item 
-//                         <FaShoppingCart />
-//                     </BtnAddCart>
-//                 </ImageWrapper>
-//                 <TitlePrecoCconteiner>
-//                     <NomeProduto>Iphone 10</NomeProduto>
-//                     <PrecoProduto>R$ 1.000,00</PrecoProduto>
-//                 </TitlePrecoCconteiner>
-//                 </ItemsCardsConteiner>
-
-
-//         </ItemsSliderWrapper> */}
-//         <ProductsCarousel />
-//         ProductsSection
-//     </Wrapper>
-//   )
-// }
-
-// export default ProductsSection
-
-// ProductsSection.tsx
 
 
 import { useEffect, useState } from 'react';
@@ -98,7 +50,6 @@ const ProductsSection = ({ title, endpoint, fallbackData = [] }: ProductsSection
     }
   }, [endpoint, fallbackData]);
 
-// const ProductsSection = ({ title, products }: ProductsSectionProps) => {
   return (
     <Wrapper>
       <TitleBtnWrapper>

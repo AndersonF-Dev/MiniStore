@@ -1,5 +1,6 @@
 // src/App.tsx
 import { Routes, Route } from 'react-router-dom';
+import Layout from './Layout/Layout'
 import { useState } from 'react';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import './App.css';
@@ -21,7 +22,8 @@ function App() {
    }
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
       {/* <Route path="/about" element={<About />} /> */}
       {/* <Route path="/shop" element={<Shop />} /> */}
       {/* <Route path="/product/:id" element={<ProductPage />} /> */}
@@ -30,6 +32,7 @@ function App() {
       {/* <Route path="/blog" element={<Blog />} /> */}
       {/* <Route path="/blog/:slug" element={<BlogPost />} /> */}
       {/* <Route path="/contact" element={<Contact />} /> */}
+      </Route>
     </Routes>
   );
 }

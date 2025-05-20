@@ -24,21 +24,14 @@ const ProductCard: React.FC<Props> = ({ image, name, price }) => (
   <CardWrapper>
     <ImageWrapper>
         <ProductImage src={image} alt={name} />
-        {/* <BtnAddCart>
-            Adicionar ao
-            <FaShoppingCart />
-        </BtnAddCart>
-        <BtnVerProduct>
-            Ver produto
-        <FaShoppingCart />
-      </BtnVerProduct> */}
+        
       <ButtonsWrapper className="buttons-wrapper">
         <BtnAddCart>
           Adicionar ao <FaShoppingCart />
         </BtnAddCart>
 
         <BtnVerProduct>
-          Ver produto <FaShoppingCart />
+          Ver produto 
         </BtnVerProduct>
       </ButtonsWrapper>
     </ImageWrapper>

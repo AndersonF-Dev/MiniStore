@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
     width: 72.75rem;
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 
     /* background-color: blueviolet; */
 `;
@@ -86,73 +86,8 @@ export const ProductPrice = styled.span`
     color: #43C5D5;
 `;
 
-// export const BtnAddCart = styled.button`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 6px; /* espaçamento entre ícone e texto */
-//     position: absolute;
-//     width: 150px;
-//     bottom: 10px;
-//     left: 50%;
-//     transform: translate(-50%, 20px);
-//     background-color: #272727;
-//     color: #fff;
-//     padding: 8px 14px;
-//     border: none;
-//     border-radius: 6px;
-//     opacity: 0;
-//     pointer-events: none;
-//     transition: opacity 0.3s ease, transform 0.3s ease;
-//     transition-delay: 0s; /* sem delay inicialmente */
-//     font-size: 14px;
-//     cursor: pointer;
-
-//     svg {
-//     font-size: 16px;
-//     }
-
-//     &:hover {
-//         background-color: #333;
-//     }
-// `;
-
-// export const BtnVerProduct = styled.button`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 6px; /* espaçamento entre ícone e texto */
-//     position: absolute;
-//     width: 150px;
-//     bottom: 30px;
-//     left: 50%;
-//     transform: translate(-70%, 20px);
-//     background-color: #272727;
-//     color: #fff;
-//     padding: 8px 14px;
-//     border: none;
-//     border-radius: 6px;
-//     opacity: 0;
-//     pointer-events: none;
-//     transition: opacity 0.3s ease, transform 0.3s ease;
-//     transition-delay: 0s; /* sem delay inicialmente */
-//     font-size: 14px;
-//     cursor: pointer;
-
-//     svg {
-//     font-size: 16px;
-//     }
-
-//     &:hover {
-//         background-color: #333;
-//     }
-// `;
-
 export const ImageWrapper = styled.div`
-
-
-
-   position: relative;
+  position: relative;
   overflow: hidden;
 
   &:hover .buttons-wrapper {
