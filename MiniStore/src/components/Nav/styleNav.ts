@@ -19,11 +19,13 @@ interface SubmenuItemProps {
 export const Conteiner = styled.div`
     width: 100%;
     /* height: 72px; */
+    display: flex;
+    justify-content: center;
     /* background-color:rgb(199, 26, 26); */
 `;
 
 export const Conteiter = styled.div`
-    width: 1365px;
+    width: 72.75rem;
     display: flex;
     padding: 0.5rem 1rem ;
     justify-content: space-between;

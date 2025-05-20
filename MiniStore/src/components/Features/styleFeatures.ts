@@ -11,7 +11,8 @@ export const Conteiter = styled.div`
     width: 17.988rem;
     display: flex;
     gap: .5rem;
-    padding: 1rem 0;
+    margin: 80px 0 80px 0;
+    /* padding: 1rem 0; */
     /* background-color: blue; */
 `;
 
