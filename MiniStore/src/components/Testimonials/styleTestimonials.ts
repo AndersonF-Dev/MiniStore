@@ -34,7 +34,7 @@ export const ArrowWrapper = styled.div`
 `;
 
 export const Img = styled.img`
-    
+    width: 4rem;
 `;
 
 export const Review = styled.p`
