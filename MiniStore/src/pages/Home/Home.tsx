@@ -6,6 +6,7 @@ import LatestPosts from '../../components/LatestPosts/LatestPosts';
 import homeFeatures from '../../data/HomeFeaturesData';
 import posts from '../../data/PostData';
 import Sale from '../../components/Sale/Sale';
+import Testimonials from '../../components/Testimonials/Testimonials'
 import ProductsSection from '../../components/ProductsSection/ProductsSection';
 import { mobileProducts, watchProducts } from '../../data/productsData';
 import {
@@ -33,7 +34,7 @@ const Home = () => {
           posts={posts}
           redirectTo="/blog"
         />
-
+        <Testimonials />
         <h1>Home</h1>
     </Conteiner>
   )
