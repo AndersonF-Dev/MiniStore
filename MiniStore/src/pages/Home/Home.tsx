@@ -8,6 +8,8 @@ import posts from '../../data/PostData';
 import Sale from '../../components/Sale/Sale';
 import Testimonials from '../../components/Testimonials/Testimonials';
 import Newsletter from '../../components/Newsletter/Newsletter';
+import InstagramFeed from '../../components/InstagramFeed/InstagramFeed';
+// import Footer from '../../components/Footer/Footer'
 import ProductsSection from '../../components/ProductsSection/ProductsSection';
 import { mobileProducts, watchProducts } from '../../data/productsData';
 import {
@@ -15,6 +17,7 @@ import {
 } from './StyleHome';
 
 const Home = () => {
+   const token = "IGQVJ..."; // Depois virá da sua API em Node.js
   return (
     <Conteiner>
         {/* <Nav /> */}
@@ -37,6 +40,7 @@ const Home = () => {
         />
         <Testimonials />
         <Newsletter />
+        <InstagramFeed token={token} />;
         <h1>Home</h1>
     </Conteiner>
   )
