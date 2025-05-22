@@ -31,7 +31,24 @@ export const Conteiter = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #3A3A3A;
+    background-color:rgb(58, 58, 58);
+
+    /* @media (max-width: 820px) {
+      img{
+        display: none;
+      }
+    } */
+`;
+
+export const Logo = styled.img`
+  /* width: 15%;
+  height: 15%; */
+  object-fit: cover;
+
+     @media (max-width: 820px) {
+        display: none;
+      
+    }
 `;
 
 export const ConteinerNavbarRightIcon = styled.div`
@@ -45,6 +62,11 @@ export const Vavbar = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 820px){
+      width: 120px;
+       /* background-color: blueviolet; */
+    }
 `;
 export const NavbarList = styled.ul<{ mobileMenuOpen?: boolean }>`
     display: flex;

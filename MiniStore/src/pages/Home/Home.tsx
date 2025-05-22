@@ -40,7 +40,7 @@ const Home = () => {
         />
         <Testimonials />
         <Newsletter />
-        <InstagramFeed token={token} />;
+        <InstagramFeed token={token} />
         <h1>Home</h1>
     </Conteiner>
   )

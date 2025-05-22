@@ -19,9 +19,24 @@ interface ProductsCarouselProps {
 const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    slides: { perView: 4, spacing: 10 },
     loop: true,
+    slides: { 
+      perView: 4, 
+      spacing: 10 
+    },
+     breakpoints: {
+    "(max-width: 1280px)": {
+      slides: { perView: 3, spacing: 10 },
+    },
+    "(max-width: 1024px)": {
+      slides: { perView: 4, spacing: 10 },
+    },
+    "(max-width: 526px)": {
+      slides: { perView: 1, spacing: 5 },
+    },
+  },
     slideChanged(s) {
       setCurrentSlide(s.track.details.rel);
     },

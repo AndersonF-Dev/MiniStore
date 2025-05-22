@@ -6,11 +6,18 @@ interface ProgressProps {
 
 
 export const SliderWrapper = styled.div`
-  width: 1367px;
+  /* width: 1367px;
   height: 300px;
   position: relative;
   overflow: hidden;
+  margin: 0 auto; */
+   width: 100%;
+  max-width: 1367px; /* opcional, para não estourar em telas muito grandes */
+  aspect-ratio: 16 / 4; /* mantém proporção mesmo com redimensionamento */
+  position: relative;
+  overflow: hidden;
   margin: 0 auto;
+  /* border-radius: 0.5rem; */
 `;
 
 export const BannerImage = styled.img`
@@ -24,7 +31,9 @@ export const ProgressWrapper = styled.div`
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 150px;
+  /* width: 150px; */
+  width: 30%;
+  max-width: 150px;
   height: 6px;
   background-color: #ccc;
   border-radius: 10px;

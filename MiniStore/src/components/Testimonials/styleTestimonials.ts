@@ -10,6 +10,11 @@ export const Conteiner = styled.section`
     justify-content: space-between;
 
     /* background-color: violet; */
+
+     @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+      width: 50rem;
+      background-color:rgb(75, 204, 58);
+   }
 `;
 
 export const Content = styled.div`
@@ -21,6 +26,11 @@ export const Content = styled.div`
     align-items: center;
     gap: 1rem;
     /* background-color: cadetblue; */
+
+      /* @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+      width: 40rem;
+      background-color:rgb(58, 204, 82);
+   } */
 `;
 
 
@@ -31,6 +41,11 @@ export const ArrowWrapper = styled.div`
   justify-content: center;
   color: #D7DDDF;
   font-size: 32px;
+
+    /* @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+      width: 50rem;
+      background-color:rgb(204, 58, 58);
+   } */
 `;
 
 export const Img = styled.img`
@@ -42,6 +57,12 @@ export const Review = styled.p`
     color: #E0E0E0;
     font-size: 1.5rem;
     font-weight: 300;
+
+      @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+      width: 40rem;
+      font-size: 1.2rem;
+      background-color:rgb(204, 58, 58);
+   }
 `;
 
 export const ReviewStarNameConteiner = styled.div`

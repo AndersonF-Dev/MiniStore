@@ -7,6 +7,7 @@ import ministoreLogo from '../../assets/ministore-logo.svg';
 import {
     Conteiner,
     Conteiter,
+    Logo,
     Vavbar,
     NavbarItem,
     NavbarList,
@@ -39,7 +40,7 @@ const Nav = () => {
   return (
     <Conteiner>
         <Conteiter>
-            <img src={logo} alt="Logo" />
+            <Logo src={logo} alt="Logo" />
 
             <MobileMenuButton open={mobileMenuOpen} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                 {/* <FaMobileAlt /> */}

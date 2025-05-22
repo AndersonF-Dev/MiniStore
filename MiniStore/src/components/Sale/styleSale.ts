@@ -9,6 +9,14 @@ export const Wrapper = styled.section`
     width: 100%;
     height: 27.5rem;
     background-color: #9A9FA3;
+
+     @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+     /* grid-template-columns: 1fr; */
+     gap: 1.0rem;
+     text-align: center;
+     padding: 1rem;
+     /* place-items: center; */
+   }
 `;
 
 export const InforConteinter = styled.div`
@@ -43,6 +51,10 @@ export const TitleInfor = styled.h3`
     font-size: 5.188rem;
     font-weight: 300;
     line-height: 1;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      font-size: 4.188rem;
+    }
 `;
 
 const glow = keyframes`

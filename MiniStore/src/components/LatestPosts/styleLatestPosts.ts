@@ -4,15 +4,27 @@ export const Conteiner = styled.section`
     width: 72.75rem;
     height: 26rem;
     margin: 5rem 0;
-    /* background-color: blue; */
+    background-color: blue;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
+        width: 49.8rem;
+        height: 50.8rem;
+
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    
 `;
 
 export const TitleBtnWrapper = styled.div`
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: .5rem 0;
 
-    /* background-color: olive; */
+    background-color: olive;
 `;
 
 export const Title = styled.h3`
@@ -31,12 +43,41 @@ export const BtnReadBlogs = styled.button`
 
 export const PostsWrapper = styled.div`
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    background-color:rgb(202, 49, 49);
+    /* width: 100%;
     height: 23rem;
     display: flex;
-    gap: 2rem;
+    gap: 2rem; */
     /* justify-content: space-around; */
 
     /* border: 2px solid red; */
+    /* background-color: orange; */
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    
+  }
+
+  @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+     grid-template-columns: repeat(2, 1fr);
+     /* justify-content: center; */
+     /* align-items: center; */
+     width: 80%;
+     gap: 1.9rem;
+     text-align: center;
+     padding: .1rem;
+     /* place-items: center; */
+   }
+
+  @media (max-width: ${({ theme}) => theme.breakpoints.mobile3}) {
+     grid-template-columns: 1fr;
+     text-align: center;
+     place-items: center;
+   }
 `;
 
 export const Posts = styled.div`

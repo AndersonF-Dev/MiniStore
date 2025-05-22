@@ -11,6 +11,11 @@ export const Conteiner = styled.section`
     width: 72.75rem;
     height: 10rem;
     background-color: #272727;
+
+     @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+      width: 51rem;
+      background-color:rgb(204, 58, 58);
+   }
 `;
 
 export const TextWrapper = styled.div`
