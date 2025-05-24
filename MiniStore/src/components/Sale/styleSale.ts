@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
     height: 27.5rem;
     background-color: #9A9FA3;
 
-     @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+     @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
      /* grid-template-columns: 1fr; */
      gap: 1.0rem;
      text-align: center;
@@ -52,7 +52,7 @@ export const TitleInfor = styled.h3`
     font-weight: 300;
     line-height: 1;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}) {
       font-size: 4.188rem;
     }
 `;

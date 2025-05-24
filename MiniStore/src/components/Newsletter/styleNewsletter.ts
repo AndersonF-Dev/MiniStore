@@ -12,7 +12,7 @@ export const Conteiner = styled.section`
     height: 10rem;
     background-color: #272727;
 
-     @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+     @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
       width: 51rem;
       background-color:rgb(204, 58, 58);
    }

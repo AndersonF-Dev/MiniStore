@@ -11,13 +11,14 @@ export const Wrapper = styled.section`
      width: 100%;
   max-width: 72.75rem;
   /* padding: 10px ; */
-  margin: 0 .9rem 5rem auto;
+  /* margin: 0 .9rem 5rem auto; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
-    /* background-color: blueviolet; */
+    background-color: blueviolet;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
+    @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}){
       padding: 10px ;
     }
 `;
@@ -33,7 +34,7 @@ export const TitleBtnWrapper = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
    
-    /* background-color: olivedrab; */
+    background-color: olivedrab;
 `;
 
 export const TitleSection = styled.h3`
@@ -90,12 +91,12 @@ export const CardWrapper = styled.div`
   padding: .3rem;
     /* background-color: burlywood; */
 
-    @media (max-width: ${theme.breakpoints.tablet}) {
+    @media (max-width: ${theme.breakpoints.ipadMini}) {
       max-width: 12rem;
       /* padding: .5rem; */
     }
 
-    @media (max-width: ${theme.breakpoints.mobile3}) {
+    @media (max-width: ${theme.breakpoints.smallTablet}) {
       max-width: 10rem;
     }
 `;
@@ -132,7 +133,7 @@ export const ProductName = styled.p`
 
     /* background-color: aqua; */
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}) {
       font-size: 1.2rem;
       max-width: 90px;
     }
@@ -174,7 +175,7 @@ export const ButtonsWrapper = styled.div`
     pointer-events: auto;
   }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}) {
       width: 150px;
       left: 15px;
     }

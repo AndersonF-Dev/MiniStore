@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../styles/theme/media";
 
 interface ProgressProps {
   progress: number;
@@ -18,6 +19,38 @@ export const SliderWrapper = styled.div`
   overflow: hidden;
   margin: 0 auto;
   /* border-radius: 0.5rem; */
+
+  //ipadMini: "820px"
+  @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}){
+  width: 85%;
+  }
+
+  //smallTablet: "526px"
+  @media ${media.smallTablet}{
+  width: 55%;
+  }
+
+  //Google Pixel 7a 427
+  @media ${media.pixel7a}{
+  width: 44%;
+  }
+  //fold: "426px"
+  @media ${media.fold}{
+  width: 44%;
+  }
+  //iphoneXR: "414px"
+  @media ${media.iphoneXR}{
+  width: 44%;
+  }
+
+  //galaxyS: "360px"
+  @media ${media.galaxyS} {
+  width: 37%;
+  }
+  //mobileS: "320px",
+  @media ${media.mobileS} {
+  width: 33%;
+  }
 `;
 
 export const BannerImage = styled.img`

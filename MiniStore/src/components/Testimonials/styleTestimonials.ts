@@ -11,7 +11,7 @@ export const Conteiner = styled.section`
 
     /* background-color: violet; */
 
-     @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+     @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
       width: 50rem;
       background-color:rgb(75, 204, 58);
    }
@@ -27,7 +27,7 @@ export const Content = styled.div`
     gap: 1rem;
     /* background-color: cadetblue; */
 
-      /* @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+      /* @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
       width: 40rem;
       background-color:rgb(58, 204, 82);
    } */
@@ -42,7 +42,7 @@ export const ArrowWrapper = styled.div`
   color: #D7DDDF;
   font-size: 32px;
 
-    /* @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+    /* @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
       width: 50rem;
       background-color:rgb(204, 58, 58);
    } */
@@ -58,7 +58,7 @@ export const Review = styled.p`
     font-size: 1.5rem;
     font-weight: 300;
 
-      @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+      @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
       width: 40rem;
       font-size: 1.2rem;
       background-color:rgb(204, 58, 58);

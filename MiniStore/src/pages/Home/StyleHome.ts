@@ -14,7 +14,7 @@ export const Conteiner = styled.div`
     /* width: 500px;
     height: 500px; */
 
-     @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+     @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
      /* grid-template-columns: 1fr; */
      max-width: 60rem;
      text-align: center;

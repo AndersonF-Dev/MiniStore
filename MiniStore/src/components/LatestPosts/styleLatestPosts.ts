@@ -6,7 +6,7 @@ export const Conteiner = styled.section`
     margin: 5rem 0;
     background-color: blue;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
+    @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}){
         width: 49.8rem;
         height: 50.8rem;
 
@@ -56,13 +56,13 @@ export const PostsWrapper = styled.div`
     /* border: 2px solid red; */
     /* background-color: orange; */
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.customDesktop}) {
     
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     
   }
 
-  @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+  @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
      grid-template-columns: repeat(2, 1fr);
      /* justify-content: center; */
      /* align-items: center; */
@@ -73,7 +73,7 @@ export const PostsWrapper = styled.div`
      /* place-items: center; */
    }
 
-  @media (max-width: ${({ theme}) => theme.breakpoints.mobile3}) {
+  @media (max-width: ${({ theme}) => theme.breakpoints.smallTablet}) {
      grid-template-columns: 1fr;
      text-align: center;
      place-items: center;

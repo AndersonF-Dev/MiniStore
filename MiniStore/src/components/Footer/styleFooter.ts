@@ -153,7 +153,7 @@ export const Conteiner = styled.footer`
   font-family: ${({ theme }) => theme.fonts.secondary};
   padding: 2rem 1rem;
 
-   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+   @media (max-width: ${({ theme }) => theme.breakpoints.customDesktop}) {
     /* justify-content: center;
     height: auto;
     gap: 2rem;
@@ -177,7 +177,7 @@ export const Wrapper = styled.div`
     gap: 2rem;
     background-color: brown;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.customDesktop}) {
     /* justify-content: center;
     height: auto;
     gap: 2rem;
@@ -185,7 +185,7 @@ export const Wrapper = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   }
 
-  @media (max-width: ${({ theme}) => theme.breakpoints.tablet}) {
+  @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
      /* grid-template-columns: 1fr; */
      gap: 1.0rem;
      text-align: center;
@@ -193,7 +193,7 @@ export const Wrapper = styled.div`
      /* place-items: center; */
    }
 
-  @media (max-width: ${({ theme}) => theme.breakpoints.mobile3}) {
+  @media (max-width: ${({ theme}) => theme.breakpoints.smallTablet}) {
      grid-template-columns: 1fr;
      text-align: center;
      place-items: center;
@@ -207,11 +207,11 @@ export const Company = styled.div`
   align-items: flex-start;
   background-color: blue;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}) {
     width: 100%;
     align-items: center;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile3}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallTablet}) {
     /* width: 100%; */
     align-items: center;
   }
@@ -230,7 +230,7 @@ export const Infor = styled.p`
   font-size: 1rem;
   margin-bottom: 1rem;
 
-   @media (max-width: ${({ theme }) => theme.breakpoints.mobile3}) {
+   @media (max-width: ${({ theme }) => theme.breakpoints.smallTablet}) {
      text-align: center;
    }
 `;
@@ -317,7 +317,7 @@ export const ContactUsConteiner = styled.div`
   background-color: blueviolet;
   text-align: left;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile3}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallTablet}) {
     /* width: 100%; */
     text-align: center;
   }

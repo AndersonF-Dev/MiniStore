@@ -43,7 +43,7 @@ const Nav = () => {
             <Logo src={logo} alt="Logo" />
 
             <MobileMenuButton open={mobileMenuOpen} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                {/* <FaMobileAlt /> */}
+                
                 <img src={ministoreLogo} alt="MiniStore Logo" style={{ width: '44px', height: '44px' }} />
 
             </MobileMenuButton>
