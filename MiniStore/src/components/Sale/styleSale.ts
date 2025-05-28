@@ -1,22 +1,92 @@
 import styled, { keyframes } from 'styled-components';
-
+import { media } from "../../styles/theme/media";
 
 
 export const Wrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
     width: 100%;
     height: 27.5rem;
     background-color: #9A9FA3;
 
-     @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
-     /* grid-template-columns: 1fr; */
-     gap: 1.0rem;
-     text-align: center;
-     padding: 1rem;
-     /* place-items: center; */
-   }
+    //laptop: "1024px",
+     @media ${media.laptop} {
+      /* width: 88%; */
+      padding: 0 4.0rem;
+      /* width: 64.1rem; */
+    }
+    
+    //ipadMini: "820px",
+    @media ${media.ipadMini} {
+      gap: 1.0rem;
+      text-align: center;
+      padding: 1rem;
+      width: 86%;
+      /* place-items: center; */
+    }
+    
+    //tablet: "768px",  
+    @media ${media.tablet}{
+      width: 80%;
+      height: 23.5rem;
+      /* background-color: orange; */
+    }
+    //smallTablet: "526px",  
+    @media ${media.smallTablet}{
+      flex-direction: column;
+      flex-direction: column-reverse;
+      width: 64.2%;
+      overflow: hidden;
+      height: 40.5rem;
+      /* background-color: orange; */
+    }
+    //pixel7a: "427px",  
+    @media ${media.pixel7a}{
+      flex-direction: column;
+      flex-direction: column-reverse;
+      width: 52%;
+      overflow: hidden;
+      height: 40.5rem;
+      /* background-color: orange; */
+    }
+    //fold: "426px",  
+    @media ${media.fold}{
+      flex-direction: column;
+      flex-direction: column-reverse;
+      width: 52%;
+      overflow: hidden;
+      height: 40.5rem;
+      /* background-color: orange; */
+    }
+    //iphoneXR: "414px",  
+    @media ${media.iphoneXR}{
+      flex-direction: column;
+      flex-direction: column-reverse;
+      width: 50.5%;
+      overflow: hidden;
+      height: 40.5rem;
+      /* background-color: orange; */
+    }
+    //galaxyS: "360px",  
+    @media ${media.galaxyS}{
+      flex-direction: column;
+      flex-direction: column-reverse;
+      width: 44%;
+      overflow: hidden;
+      height: 30.5rem;
+      /* background-color: orange; */
+    }
+    //mobileS: "320px",  
+    @media ${media.mobileS}{
+      flex-direction: column;
+      flex-direction: column-reverse;
+      width: 39%;
+      overflow: hidden;
+      height: 30.5rem;
+      /* background-color: orange; */
+    }
 `;
 
 export const InforConteinter = styled.div`
@@ -27,6 +97,42 @@ export const InforConteinter = styled.div`
     justify-content: center;
 
     /* background-color: orchid; */
+
+    //laptop: "1024px",
+     @media ${media.laptop}{
+      /* font-size: 4.1rem; */
+      width: 31.1rem;
+     }
+
+     //ipadMini: "820px",
+     @media ${media.ipadMini}{
+      width: 45.1rem;
+      /* background-color: orange; */
+     }
+
+    //smallTablet: "526px",  
+    @media ${media.smallTablet}{
+      width: 26.1rem;
+    }
+    //pixel7a: "427px",  
+    @media ${media.pixel7a}{
+      width: 23.1rem;
+    }
+
+    //fold: "426px",  
+    @media ${media.fold}{
+      width: 23.1rem;
+    }
+
+    //galaxyS: "360px",  
+    @media ${media.galaxyS}{
+      width: 21.1rem;
+    }
+    //mobileS: "320px",  
+    @media ${media.mobileS}{
+      width: 18.1rem;
+    }
+
 `;
 
 export const TextoInfor = styled.p`
@@ -34,6 +140,8 @@ export const TextoInfor = styled.p`
     font-weight: 300;
     color: #272727;
     position: relative;
+    margin-bottom: 0,625rem;
+    
 
     &::before {
     content: '';
@@ -41,9 +149,22 @@ export const TextoInfor = styled.p`
     width: 40px;
     height: 2px;
     background-color: #272727;
-    margin-right: 8px;
+    margin: 0 8px 4px 0;
+    /* margin-right: 8px;
+    margin-bottom: 4px; */
     vertical-align: middle;
   }
+
+  //galaxyS: "360px",  
+    @media ${media.galaxyS}{
+      font-size: 1.8rem;
+      
+    }
+  //mobileS: "320px",  
+    @media ${media.mobileS}{
+      font-size: 1.4rem;
+      
+    }
 `;
 
 export const TitleInfor = styled.h3`
@@ -52,8 +173,27 @@ export const TitleInfor = styled.h3`
     font-weight: 300;
     line-height: 1;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.ipadMini}) {
-      font-size: 4.188rem;
+    //laptop: "1024px",
+     @media ${media.laptop}{
+      font-size: 4.1rem;
+     }
+
+    @media ${media.ipadMini} {
+      font-size: 3.7rem;
+    }
+
+    //tablet: "768px",  
+    @media ${media.tablet}{
+      font-size: 3.5rem;
+    }
+
+    //galaxyS: "360px",  
+    @media ${media.galaxyS}{
+      font-size: 3.2rem;
+    }
+    //mobileS: "320px",  
+    @media ${media.mobileS}{
+      font-size: 2.8rem;
     }
 `;
 
@@ -77,7 +217,7 @@ export const BtnInfor = styled.button`
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.5s, transform 0.3s;
     margin-top: 8px;
 
     &::before {
@@ -104,4 +244,47 @@ export const ImgInfor = styled.img`
     max-height: 25.875rem;
     overflow: hidden;
     /* background-color:rgb(43, 184, 202); */
+
+    //laptop: "1024px",
+     @media ${media.laptop}{
+      width: 28.0rem; 
+     }
+
+       //ipadMini: "820px",  
+    @media ${media.ipadMini}{
+      width: 40.1rem;
+      /* background-color: red; */
+    }
+       //tablet: "768px",  
+    @media ${media.tablet}{
+      width: 39.1rem;
+      /* background-color: red; */
+    }
+
+     //smallTablet: "526px",  
+    @media ${media.smallTablet}{
+      width: 29.1rem;
+    }
+     //pixel7a: "427px",  
+    @media ${media.pixel7a}{
+      width: 25.1rem;
+    }
+     //fold: "426px",  
+    @media ${media.fold}{
+      width: 25.1rem;
+    }
+     //fold: "414px",  
+    @media ${media.iphoneXR}{
+      width: 25.1rem;
+    }
+
+    //galaxyS: "360px",  
+    @media ${media.galaxyS}{
+      width: 22.1rem;
+      /* background-color: red; */
+    }
+    //mobileS: "320px",  
+    @media ${media.mobileS}{
+      width: 18.1rem;
+    }
 `;

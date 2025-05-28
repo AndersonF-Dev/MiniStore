@@ -1,25 +1,3 @@
-// export const theme = {
-//   colors: {
-//     background: "#3A3A3A",
-//     background_SubMenu: "rgba(58, 58, 58, 0.79)",
-//     subtitle: "#B5B5B5",
-//     title: "#E0E0E0",
-//     accent: "#00BCD4",
-//     dark: "#272727",
-//   },
-//   fonts: {
-//     primary: "'Jost', sans-serif",
-//     secondary: "'Lato', sans-serif",
-//   },
-//   breakpoints: {
-//     mobile: "360px",
-//     mobile2: "427px",
-//     mobile3: "526px",
-//     tablet: "820px",
-//     laptop: "1024px",
-//     desktop: "1280px",
-//   },
-// };
 
 export const theme = {
   colors: {

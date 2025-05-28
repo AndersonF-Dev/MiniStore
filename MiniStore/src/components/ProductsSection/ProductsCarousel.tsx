@@ -33,8 +33,21 @@ const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
     "(max-width: 1024px)": {
       slides: { perView: 4, spacing: 10 },
     },
+
     "(max-width: 526px)": {
+      slides: { perView: 3, spacing: 5 },
+    },
+
+    "(max-width: 427px)": {
+      slides: { perView: 2, spacing: 5 },
+    },
+
+    "(max-width: 360px)": {
       slides: { perView: 1, spacing: 5 },
+    },
+
+    "(max-width: 320px)": {
+      slides: { perView: 1, spacing: 5, origin: 'center'  },
     },
   },
     slideChanged(s) {

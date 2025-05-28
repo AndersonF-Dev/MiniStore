@@ -11,9 +11,17 @@ export const Conteiner = styled.section`
     align-items: center;
     justify-content: space-around;
 
+    //laptop: "1024px",  Laptops pequenos
+     @media ${media.laptop}{
+        width: 63.9rem;
+    }
     //ipadMini: "820px", 
     @media ${media.ipadMini}{
         width: 49.7rem;
+    }
+      //smallTablet: "526px",
+    @media ${media.smallTablet}{
+
     }
     //fold: "426px",
     @media ${media.fold} {
@@ -47,6 +55,7 @@ export const GridWrapper = styled.div`
         justify-content: center;
         align-items: center;
         width: 64%;
+        margin-bottom: 30px;
     }
     //pixel7a: "427px",
     @media ${media.pixel7a} {
@@ -75,6 +84,11 @@ export const Conteiter = styled.div`
     display: flex;
     gap: .5rem;
     margin: 80px auto 80px auto;
+
+     //laptop: "1024px",  Laptops pequenos
+     @media ${media.laptop}{
+        width: 14.1rem;
+     }
 
     //ipadMini: "820px", 
     @media ${media.ipadMini}{
@@ -107,6 +121,11 @@ export const Conteiter = styled.div`
 export const Icon = styled.img`
     height: 25px;
 
+     //laptop: "1024px",  Laptops pequenos
+     @media ${media.laptop}{
+        height: 18px;
+     }
+
     //smallTablet: "526px",
     @media ${media.smallTablet}{
         height: 19px;
@@ -121,6 +140,11 @@ export const ConteinerText = styled.div`
 export const Title = styled.h4`
     font-size: 1.25rem;
     color: #E0E0E0;
+
+     //laptop: "1024px",  Laptops pequenos
+     @media ${media.laptop}{
+        font-size: 1.1rem;
+     }
 
     //smallTablet: "526px",
     @media ${media.smallTablet}{
@@ -141,6 +165,11 @@ export const Title = styled.h4`
 export const SubTitle = styled.p`
     font-size: 1rem;
     color: #B5B5B5;
+
+     //laptop: "1024px",  Laptops pequenos
+     @media ${media.laptop}{
+        font-size: .8rem;
+     }
 
     //smallTablet: "526px",
     @media ${media.smallTablet}{

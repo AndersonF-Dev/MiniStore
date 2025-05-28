@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const Conteiner = styled.div`
-    display: flex;
+    max-width: 1350px;
     min-width: 95%;
+    
+    display: flex;
     flex-direction: column;
-    overflow: hidden;
-    /* justify-content: center; */
     align-items: center;
+    /* overflow: hidden; */
+    /* justify-content: center; */
     /* border: 1px solid orange;
     width: 72.75rem; */
-    max-width: 1350px;
     /* background-color: orange; */
     /* width: 500px;
     height: 500px; */
