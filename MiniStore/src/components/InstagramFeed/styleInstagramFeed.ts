@@ -4,6 +4,7 @@ export const Container = styled.section`
   padding: 40px 20px;
   background-color: #f9f9f9;
   text-align: center;
+  margin: 0 0 80px 0;
 `;
 
 export const Title = styled.h2`

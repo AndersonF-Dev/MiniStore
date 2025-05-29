@@ -5,7 +5,7 @@ import { useState } from 'react';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import './App.css';
 import Home from './pages/Home/Home';
-// import About from './pages/About/About';
+import About from './pages/About/About';
 // import Shop from './pages/Shop/Shop';
 // import ProductPage from './pages/ProductPage/ProductPage';
 // import Cart from './pages/Cart/Cart';
@@ -24,7 +24,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-      {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} />
       {/* <Route path="/shop" element={<Shop />} /> */}
       {/* <Route path="/product/:id" element={<ProductPage />} /> */}
       {/* <Route path="/cart" element={<Cart />} /> */}

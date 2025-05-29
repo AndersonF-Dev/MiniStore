@@ -11,6 +11,7 @@ export const Conteiner = styled.section`
     justify-content: space-around;
     width: 72.75rem;
     height: 10rem;
+    margin: 80px 0;
     background-color: #272727;
 
     /* //laptop: "1024px",
