@@ -2,8 +2,8 @@ import styled from "styled-components";
 // import { media } from "../../styles/theme/media";
 
 export const Conteiner = styled.div`
-    max-width: 1350px;
-    min-width: 95%;
+    max-width: 1366px;
+    min-width: 100%;
     
     display: flex;
     flex-direction: column;

@@ -99,7 +99,7 @@ export const breakpoints = {
 
 // Mixins
 export const mixins = {
-  flexCenter: theme.mixins.flexCenter,//
+  flexCenter: theme.mixins.flexCenter,
   center: theme.mixins.center,
   flexSpaceBetween: theme.mixins.flexSpaceBetween,
   flexJustifyCenter: theme.mixins.flexJustifyCenter,
