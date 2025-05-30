@@ -2,17 +2,31 @@
 import { Container, Title, Breadcrumb } from "./stylePageHeader";
 import { Link } from "react-router-dom";
 
-interface PageHeaderProps {
-  pageName: string;
-  pagePath: string;
+interface BreadcrumbItem {
+  name: string;
+  path?: string; // opcional para o último item (sem link)
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ pageName, pagePath }) => {
+interface PageHeaderProps {
+  title: string;
+  breadcrumbs: BreadcrumbItem[];
+}
+
+const PageHeader: React.FC<PageHeaderProps> = ({ title, breadcrumbs }) => {
   return (
     <Container>
-      <Title>{pageName}</Title>
+      <Title>{title}</Title>
       <Breadcrumb>
-        <Link to="/">Home</Link> / <Link to={pagePath}>{pageName}</Link>
+        {breadcrumbs.map((item, index) => (
+          <span key={index}>
+            {item.path ? (
+              <Link to={item.path}>{item.name}</Link>
+            ) : (
+              <span>{item.name}</span>
+            )}
+            {index < breadcrumbs.length - 1 && " / "}
+          </span>
+        ))}
       </Breadcrumb>
     </Container>
   );

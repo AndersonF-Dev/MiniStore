@@ -29,3 +29,84 @@ export const watchProducts = [
   { image: produto2, name: 'Haylou RT2', price: 'R$ 450,00' },
   { image: produto2, name: 'Mobvoi TicWatch E3', price: 'R$ 980,00' },
 ]
+
+// productsData.ts
+export const product = [
+  {
+    id: 1,
+    image: produto1,
+    name: "Apple Watch Series 7",
+    price: "R$ 29.99",
+    stock: 3, // Sem estoque
+  },
+  {
+    id: 2,
+    image: produto2,
+    name: "Mobvoi TicWatch E3",
+    price: "R$ 2.000,00",
+    stock: 3, // Sem estoque
+  },
+  {
+    id: 3,
+    image: produto1,
+    name: "Haylou RT2",
+    price: "R$ 450,00",
+    stock: 3, // Sem estoque
+  },
+  {
+    id: 4,
+    image: produto1,
+    name: "Haylou RT2",
+    price: "R$ 450,00",
+    stock: 0, // Sem estoque
+  },
+  {
+    id: 5,
+    image: produto1,
+    name: "Apple Watch Series 7",
+    price: "R$ 29.99",
+    stock: 0, // Sem estoque
+  },
+  {
+    id: 6,
+    image: produto2,
+    name: "Mobvoi TicWatch E3",
+    price: "R$ 2.000,00",
+    stock: 4, // Sem estoque
+  },
+  {
+    id: 7,
+    image: produto1,
+    name: "Haylou RT2",
+    price: "R$ 450,00",
+    stock: 0, // Sem estoque
+  },
+  {
+    id: 8,
+    image: produto1,
+    name: "Haylou RT2",
+    price: "R$ 450,00",
+    stock: 3, // Sem estoque
+  },
+  {
+    id: 9,
+    image: produto1,
+    name: "Haylou RT2",
+    price: "R$ 450,00",
+    stock: 3, // Sem estoque
+  },
+  {
+    id: 10,
+    image: produto1,
+    name: "Haylou RT2",
+    price: "R$ 450,00",
+    stock: 0, // Sem estoque
+  },
+  {
+    id: 11,
+    image: produto1,
+    name: "Haylou RT2",
+    price: "R$ 450,00",
+    stock: 3, // Sem estoque
+  },
+]

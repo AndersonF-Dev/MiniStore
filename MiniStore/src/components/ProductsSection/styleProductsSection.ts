@@ -291,3 +291,16 @@ export const BtnVerProduct = styled.button`
 }
 `;
 
+export const OutOfStockBadge = styled.div`
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+`;
+
+

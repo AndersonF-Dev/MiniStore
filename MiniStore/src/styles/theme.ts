@@ -112,6 +112,18 @@ export const theme = {
       justify-content: center;
       align-items: center;
     `,
+    flexJustifyCenterColumn: `
+      display: flex;
+	    flex-direction: column;
+      justify-content: center;
+	    align-items: center;
+    `,
+    flexAlignStartColumn: `
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    `,
 
      flexSpaceBetween: `
       display: flex;
@@ -126,6 +138,11 @@ export const theme = {
     flexAlignItemsCenter: `
       display: flex;
       align-items: center;
+    `,
+    flexAlignItemsStart: `
+      display: flex;
+      justify-content: center;
+      align-items: start;
     `,
     
     // ${({ theme }) => theme.mixins.fullWidth}

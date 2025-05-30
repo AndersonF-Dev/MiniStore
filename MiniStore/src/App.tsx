@@ -6,7 +6,7 @@ import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import './App.css';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-// import Shop from './pages/Shop/Shop';
+import Shop from './pages/Shop/shop';
 // import ProductPage from './pages/ProductPage/ProductPage';
 // import Cart from './pages/Cart/Cart';
 // import Checkout from './pages/Checkout/Checkout';
@@ -25,7 +25,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
-      {/* <Route path="/shop" element={<Shop />} /> */}
+        <Route path="/shop" element={<Shop />} />
       {/* <Route path="/product/:id" element={<ProductPage />} /> */}
       {/* <Route path="/cart" element={<Cart />} /> */}
       {/* <Route path="/checkout" element={<Checkout />} /> */}

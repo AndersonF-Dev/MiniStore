@@ -11,14 +11,21 @@ import {
     Conteiner
 } from './styleAbout'
 const About = () => {
+  const token = "IGQVJ..."; // Depois virá da sua API em Node.js
   return (
       <Conteiner>
-        <PageHeader pageName="Sobre" pagePath="/about" />
+        <PageHeader
+          title="Sobre"
+          breadcrumbs={[
+            { name: "Home", path: "/" },
+            { name: "about"},
+          ]}
+        />
         <Features items={aboutFeatures} />
         <AboutUs />
         <Testimonials />
         <Newsletter />
-        <InstagramFeed />
+        <InstagramFeed token={token} />
     </Conteiner>
   )
 }
