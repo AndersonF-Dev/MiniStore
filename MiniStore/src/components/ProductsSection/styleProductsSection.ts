@@ -155,11 +155,14 @@ export const CardWrapper = styled.div`
       margin-left: 0.8rem;
       max-width: 11rem;
     }
+
     @media ${media.galaxyS}{
       margin-left: 5rem;
       max-width: 12rem;
     }
+
     @media ${media.mobileS}{
+      padding: 0;
       margin-left: 3rem;
       max-width: 12rem;
     }

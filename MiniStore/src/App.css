@@ -4,10 +4,10 @@
 
 
 #root {
-  width: 1350px;
-  /* min-width: 95%; */
+  max-width: 1350px;
+  min-width: 95%;
   overflow: hidden;
-
+  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
   justify-content: center;

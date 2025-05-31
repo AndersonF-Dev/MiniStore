@@ -8,7 +8,8 @@ import {
     ResultsTitle,
     SortingTexto,
     PaginationWrapper,
-    PageButton
+    PageButton,
+    CardContainer
 } from './styleProductsShop'
 
 const PRODUCTS_PER_PAGE = 9;
@@ -29,12 +30,13 @@ const ProductsShop: React.FC = () => {
                 Mostrando {startIndex + 1}–
                 {Math.min(startIndex + PRODUCTS_PER_PAGE, product.length)} de {product.length} resultados
             </ResultsTitle>
+            
             <SortingTexto>
                 Classificação padrão
                 <FiChevronDown />
             </SortingTexto>
         </ResultsSortingConteiner>
-        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+        <CardContainer style={{ display: "flex", alignItems: "center",justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
         {currentProducts.map((product) => (
         <ProductCard
           key={product.id}
@@ -43,7 +45,7 @@ const ProductsShop: React.FC = () => {
           price={product.price}
         />
         ))}
-        </div>
+        </CardContainer>
 
         {/* Paginação com estilo e números */}
       <PaginationWrapper>

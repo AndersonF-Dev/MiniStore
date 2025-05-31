@@ -106,6 +106,7 @@ export const mixins = {
   flexJustifyCenter: theme.mixins.flexJustifyCenter,
   flexAlignItemsStart: theme.mixins.flexAlignItemsStart,
   flexAlignStartColumn: theme.mixins.flexAlignStartColumn,
+  flexAlignStartColumnCenter: theme.mixins.flexAlignStartColumnCenter,
   flexAlignItemsCenter: theme.mixins.flexAlignItemsCenter,
   fullWidth: theme.mixins.fullWidth,
   fullSize: theme.mixins.fullSize,

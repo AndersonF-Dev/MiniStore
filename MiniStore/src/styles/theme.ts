@@ -118,10 +118,15 @@ export const theme = {
       justify-content: center;
 	    align-items: center;
     `,
-    flexAlignStartColumn: `
+    flexAlignStartColumnCenter: `
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: start;
+    `,
+    flexAlignStartColumn: `
+      display: flex;
+      flex-direction: column;
       align-items: start;
     `,
 
