@@ -10,6 +10,7 @@ interface BreadcrumbItem {
 interface PageHeaderProps {
   title: string;
   breadcrumbs: BreadcrumbItem[];
+  variant?: 'default' | 'product';
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({ title, breadcrumbs }) => {

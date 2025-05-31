@@ -1,0 +1,12 @@
+feat: estilização e interatividade na página de produto individual
+
+-ProductPage.tsx
+  • Implementado useState para controlar seleção de cor e tamanho
+  • Adicionada lógica de clique para seleção dinâmica de cor e tamanho
+  • Aplicado destaque visual ao item selecionado com className "selected"
+  • Estilização da página de produto individual com styled-components
+
+-PageHeader.tsx
+  • Uso de props no PageHeader.tsx para alterar o estilo dinamicamente (variant="product")
+ 
+ 

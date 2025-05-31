@@ -1,3 +1,5 @@
+import type { ProductTypes } from '../types/ProductTypes';
+
 // src/data/productsData.ts
 import produto1 from '../assets/img/v14_573.png'
 import produto2 from '../assets/img/relogio.png'
@@ -31,12 +33,14 @@ export const watchProducts = [
 ]
 
 // productsData.ts
-export const product = [
+export const product: ProductTypes[] = [
   {
     id: 1,
     image: produto1,
     name: "Apple Watch Series 7",
     price: "R$ 29.99",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 3, // Sem estoque
   },
   {
@@ -44,6 +48,8 @@ export const product = [
     image: produto2,
     name: "Mobvoi TicWatch E3",
     price: "R$ 2.000,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 3, // Sem estoque
   },
   {
@@ -51,6 +57,8 @@ export const product = [
     image: produto1,
     name: "Haylou RT2",
     price: "R$ 450,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 3, // Sem estoque
   },
   {
@@ -58,6 +66,8 @@ export const product = [
     image: produto1,
     name: "Haylou RT2",
     price: "R$ 450,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 0, // Sem estoque
   },
   {
@@ -65,6 +75,8 @@ export const product = [
     image: produto1,
     name: "Apple Watch Series 7",
     price: "R$ 29.99",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 0, // Sem estoque
   },
   {
@@ -72,6 +84,8 @@ export const product = [
     image: produto2,
     name: "Mobvoi TicWatch E3",
     price: "R$ 2.000,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 4, // Sem estoque
   },
   {
@@ -79,6 +93,8 @@ export const product = [
     image: produto1,
     name: "Haylou RT2",
     price: "R$ 450,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 0, // Sem estoque
   },
   {
@@ -86,6 +102,8 @@ export const product = [
     image: produto1,
     name: "Haylou RT2",
     price: "R$ 450,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 3, // Sem estoque
   },
   {
@@ -93,6 +111,8 @@ export const product = [
     image: produto1,
     name: "Haylou RT2",
     price: "R$ 450,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 3, // Sem estoque
   },
   {
@@ -100,6 +120,8 @@ export const product = [
     image: produto1,
     name: "Haylou RT2",
     price: "R$ 450,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 0, // Sem estoque
   },
   {
@@ -107,6 +129,8 @@ export const product = [
     image: produto1,
     name: "Haylou RT2",
     price: "R$ 450,00",
+    colors: ["#FFA500", "#008000", "#0000FF", "#000000"],
+    size: [ "XL", "L", "M", "P"],
     stock: 3, // Sem estoque
   },
 ]

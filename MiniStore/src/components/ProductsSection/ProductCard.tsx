@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
+// import { product } from '../../data/productsData';
 import { FaShoppingCart } from 'react-icons/fa';
 
 import {
@@ -17,13 +18,16 @@ import {
 } from './styleProductsSection'; // ou seu arquivo de estilos
 
 type Props = {
+  id: number;
   image: string;
   name: string;
   price: string;
+  colors: string[];
+  size: string[];
   stock?: number; // novo
 };
 
-const ProductCard: React.FC<Props> = ({ image, name, price, stock = 0 }) => (
+const ProductCard: React.FC<Props> = ({ id, image, name, price, stock = 0 }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -41,7 +45,13 @@ const ProductCard: React.FC<Props> = ({ image, name, price, stock = 0 }) => (
           <BtnAddCart disabled={stock <= 0}>
             Adicionar ao <FaShoppingCart />
           </BtnAddCart>
-          <BtnVerProduct>Ver produto</BtnVerProduct>
+          <BtnVerProduct
+             onClick={() => {
+              window.open(`/product/${id}`, '_blank');
+            }}
+          >
+            Ver produto
+          </BtnVerProduct>
         </ButtonsWrapper>
       </ImageWrapper>
       <Info>
