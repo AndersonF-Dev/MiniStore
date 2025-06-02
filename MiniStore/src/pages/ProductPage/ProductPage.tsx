@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { product } from '../../data/productsData';
+import { FaShoppingCart } from 'react-icons/fa';
 import PageHeader from '../../components/PageHeader/PageHeader';
+import HorizontalAccordion from '../../components/HorizontalAccordion/HorizontalAccordion'
+import QuantityButtons from '../../components/QuantityButtons/QuantityButtons';
+import ZoomImage from '../../components/ZoomImage/ZoomImage'
+// import { CartProvider } from '../../context/CartContext';
 import { 
     Conteiner,
     SingleProductContainer,
-    Img,
+    
     ItemSummaryWrapper,
     ProductNome,
     Price,
@@ -18,6 +23,12 @@ import {
     TitleSize,
     SizeLint,
     SizeItem,
+    ConteinerBtn,
+    Button,
+    ProductMetaInfoContainer,
+    MetaItem,
+    MetaLabel,
+    MetaValue,
 } from './styleProductPage'
 
 
@@ -44,7 +55,7 @@ const ProductPage = () => {
         />
 
         <SingleProductContainer>
-            <Img src={products.image} alt={products.name} width={300} />
+            <ZoomImage src={products.image} alt={products.name} />
             <ItemSummaryWrapper>
                 <ProductNome>
                     {products.name}
@@ -53,8 +64,7 @@ const ProductPage = () => {
                     {products.price}
                 </Price>
                 <Description>
-                    Mais potência no seu pulso!
-                    O TicWatch E3 traz performance rápida, monitoramento de saúde completo e GPS integrado, tudo em um design leve e moderno. Ideal para quem vive em movimento.
+                   {products.briefDescription}
                 </Description>
                 <ConteinerProductColor>
                         <TitleColor>
@@ -86,17 +96,57 @@ const ProductPage = () => {
                         {size}
                     </SizeItem>
                     ))}
-                        {/* <SizeItem>XL</SizeItem>
-                        <SizeItem>L</SizeItem>
-                        <SizeItem>M</SizeItem>
-                        <SizeItem>P</SizeItem> */}
                     </SizeLint>
                 </ConteinerSize>
                 <p>
-                    Estoque: {products.stock > 0 ? products.stock : 'Sem estoque'}
+                    {products.stock > 0 ? products.stock : 'Sem estoque'} em estoque
                 </p>
-            </ItemSummaryWrapper>
-        </SingleProductContainer>
+                    <QuantityButtons productId={products.id.toString()} />
+
+                    <ConteinerBtn>
+                        <Button 
+                            variant="primary"
+                            onClick={() => {
+                            // Ação de comprar: você pode redirecionar para o checkout ou mostrar uma modal.
+                            alert('Redirecionando para a compra...');
+                            }}
+                        >
+                            COMPRAR
+                        </Button>
+
+                        <Button 
+                            variant="secondary"
+                            onClick={() => {
+                            // Ação de adicionar ao carrinho
+                            alert('Produto adicionado ao carrinho!');
+                            }}
+                        >
+                            ADICIONAR AO <FaShoppingCart />
+                        </Button>
+                    </ConteinerBtn>
+
+                    <ProductMetaInfoContainer>
+                        <MetaItem>
+                            <MetaLabel>SKU:</MetaLabel>
+                            <MetaValue>{products.sku}</MetaValue>
+                        </MetaItem>
+
+                        <MetaItem>
+                            <MetaLabel>Categoria:</MetaLabel>
+                            <MetaValue>{products.category}</MetaValue>
+                        </MetaItem>
+
+                        <MetaItem>
+                            <MetaLabel>Tags:</MetaLabel>
+                            <MetaValue>
+                                {products.tags.join(' , ')}
+                            </MetaValue>
+                        </MetaItem>
+                    </ProductMetaInfoContainer>
+
+                </ItemSummaryWrapper>
+            </SingleProductContainer>
+                <HorizontalAccordion />    
         
     </Conteiner>
   )

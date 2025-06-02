@@ -1,12 +1,9 @@
-feat: estilização e interatividade na página de produto individual
+feat(product-page): Implementação de abas dinâmicas em formato sanfona com componentes estilizados e recurso de zoom do produto
 
--ProductPage.tsx
-  • Implementado useState para controlar seleção de cor e tamanho
-  • Adicionada lógica de clique para seleção dinâmica de cor e tamanho
-  • Aplicado destaque visual ao item selecionado com className "selected"
-  • Estilização da página de produto individual com styled-components
-
--PageHeader.tsx
-  • Uso de props no PageHeader.tsx para alterar o estilo dinamicamente (variant="product")
- 
+- Adição de QuantityButtons com lógica de mínimo/máximo
+- Criação de botões "Comprar" e "Adicionar ao Carrinho" com propriedades estilizadas
+- Implementação de zoom ao passar o mouse para imagens de produtos
+- Criação de um sanfona com Descrição, Informações Adicionais e Avaliações
+- Os dados das abas agora são carregados dinamicamente a partir de data.ts
+- Estilização de todos os componentes usando componentes estilizados
  

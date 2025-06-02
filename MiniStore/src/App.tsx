@@ -4,6 +4,7 @@ import Layout from './Layout/Layout'
 import { useState } from 'react';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import './App.css';
+import { CartProvider } from './context/CartContext';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Shop from './pages/Shop/Shop';
@@ -21,19 +22,21 @@ function App() {
     return <LoadingScreen onFinish={() => setLoadingDone(true)} />;
    }
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/product/:id" element={<ProductPage />} />
-      {/* <Route path="/cart" element={<Cart />} /> */}
-      {/* <Route path="/checkout" element={<Checkout />} /> */}
-      {/* <Route path="/blog" element={<Blog />} /> */}
-      {/* <Route path="/blog/:slug" element={<BlogPost />} /> */}
-      {/* <Route path="/contact" element={<Contact />} /> */}
-      </Route>
-    </Routes>
+    <CartProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+        {/* <Route path="/cart" element={<Cart />} /> */}
+        {/* <Route path="/checkout" element={<Checkout />} /> */}
+        {/* <Route path="/blog" element={<Blog />} /> */}
+        {/* <Route path="/blog/:slug" element={<BlogPost />} /> */}
+        {/* <Route path="/contact" element={<Contact />} /> */}
+        </Route>
+      </Routes>
+    </CartProvider>
   );
 }
 
