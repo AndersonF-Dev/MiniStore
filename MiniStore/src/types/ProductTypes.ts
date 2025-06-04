@@ -3,7 +3,7 @@ export type ProductTypes = {
   id: number;
   image: string;
   name: string;
-  price: string;
+  price: number;
   briefDescription: string;
   stock: number;
   colors: string[]; // <- opcional

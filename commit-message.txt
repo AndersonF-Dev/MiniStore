@@ -1,9 +1,13 @@
-feat(product-page): Implementação de abas dinâmicas em formato sanfona com componentes estilizados e recurso de zoom do produto
+feat(product-page): Corrige sincronização de quantidade no carrinho e adiciona estilização da exibição dos produtos
 
-- Adição de QuantityButtons com lógica de mínimo/máximo
-- Criação de botões "Comprar" e "Adicionar ao Carrinho" com propriedades estilizadas
-- Implementação de zoom ao passar o mouse para imagens de produtos
-- Criação de um sanfona com Descrição, Informações Adicionais e Avaliações
-- Os dados das abas agora são carregados dinamicamente a partir de data.ts
-- Estilização de todos os componentes usando componentes estilizados
+- Corrigido o componente QuantityButtons para sincronizar corretamente a quantidade recebida via props.
+- Adicionado useEffect para atualizar o estado local de quantity sempre que a prop mudar.
+- Garante que a quantidade escolhida na ProductPage seja refletida corretamente na página de Carrinho.
+- Ajustado uso de CartContext para refletir atualizações no carrinho (addToCart, updateQuantity).
+- Confirmado que o carrinho mantém os dados corretos ao navegar entre páginas.
+- Criada a estilização da exibição dos produtos no carrinho usando tabela com colunas: imagem, nome, preço, quantidade e total.
+- Estilização melhora a visualização e a organização dos itens adicionados ao carrinho.
+
+Essa atualização resolve problemas de sincronização e melhora a experiência visual e funcional do usuário na página de Carrinho.
+
  

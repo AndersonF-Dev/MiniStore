@@ -21,14 +21,17 @@ import App from './App.tsx'
 import './index.css'
 import { theme } from './styles/theme'
 import { GlobalStyle } from './styles/GlobalStyle';
+import { CartProvider } from './context/CartContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <ThemeProvider theme={theme}>         {/* <-- envolva o App com ThemeProvider */}
-        <GlobalStyle />
-        <App />
-      </ThemeProvider>
+      <CartProvider> {/* ⬅️ envolve tudo aqui */}
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <App />
+        </ThemeProvider>
+      </CartProvider>
     </BrowserRouter>
   </StrictMode>
 )

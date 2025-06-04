@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { product } from '../../data/productsData';
+import { product, relatedProducts } from '../../data/productsData';
 import { FaShoppingCart } from 'react-icons/fa';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import HorizontalAccordion from '../../components/HorizontalAccordion/HorizontalAccordion'
+import HorizontalAccordion from '../../components/HorizontalAccordion/HorizontalAccordion';
 import QuantityButtons from '../../components/QuantityButtons/QuantityButtons';
-import ZoomImage from '../../components/ZoomImage/ZoomImage'
-// import { CartProvider } from '../../context/CartContext';
+import ZoomImage from '../../components/ZoomImage/ZoomImage';
+import ProductsSection from '../../components/ProductsSection/ProductsSection';
+import Newsletter from '../../components/Newsletter/Newsletter';
+import InstagramFeed from '../../components/InstagramFeed/InstagramFeed';
+import { useCart } from '../../context/CartContext';
+import CartModal from '../../components/CartModal/CartModal';
+
 import { 
     Conteiner,
     SingleProductContainer,
@@ -31,17 +36,62 @@ import {
     MetaValue,
 } from './styleProductPage'
 
+// type Produto = {
+//   id: number;
+//   nome: string;
+//   preco: number;
+// };
+
+// interface Props {
+//   produto: Produto;
+// }
 
 const ProductPage = () => {
+    const token = "IGQVJ..."; // Depois virá da sua API em Node.js
 
-    const { id } = useParams<{ id: string }>();
-    const products = product.find(p => p.id === Number(id));
+    // const { addToCart } = useCart();
 
+  
+    
+    
     const [selectedColor, setSelectedColor] = useState<string | null>(null);
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
+    
+    
+    const { id } = useParams<{ id: string }>();
+    const products = product.find(p => p.id === Number(id));
+    const { addToCart } = useCart();
+    const [quantity, setQuantity] = useState(1);
+    const [showModal, setShowModal] = useState(false);
 
     if (!products) return <div>Produto não encontrado.</div>;
+
+    // const quantity = getQuantity(products.id);
+      const handleAddToCart = () => {
+        console.log("Quantidade adicionada ao carrinho:", quantity);
+
+        addToCart({
+            id: products.id,
+            name: products.name,
+            price: products.price,
+            image: products.image,
+            quantity: quantity, // ou o valor que quiser
+        });
+     setShowModal(true);
+    };
+
+    const handleBuyNow = () => {
+        addToCart({
+            id: products.id,
+            name: products.name,
+            price: products.price,
+            image: products.image,
+            quantity: quantity,
+        });
+        window.open('/cart', '_blank'); // redireciona para o carrinho
+    };
     
+ 
   return (
     <Conteiner>
         <PageHeader
@@ -61,7 +111,7 @@ const ProductPage = () => {
                     {products.name}
                 </ProductNome>
                 <Price>
-                    {products.price}
+                    {products.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                 </Price>
                 <Description>
                    {products.briefDescription}
@@ -101,28 +151,26 @@ const ProductPage = () => {
                 <p>
                     {products.stock > 0 ? products.stock : 'Sem estoque'} em estoque
                 </p>
-                    <QuantityButtons productId={products.id.toString()} />
+                    <QuantityButtons 
+                        productId={products.id} 
+                        quantity={quantity} 
+                        onChange={setQuantity} 
+                        min={1} 
+                        max={99} 
+                    />
 
                     <ConteinerBtn>
                         <Button 
                             variant="primary"
-                            onClick={() => {
-                            // Ação de comprar: você pode redirecionar para o checkout ou mostrar uma modal.
-                            alert('Redirecionando para a compra...');
-                            }}
+                            onClick={handleBuyNow}
                         >
                             COMPRAR
                         </Button>
 
-                        <Button 
-                            variant="secondary"
-                            onClick={() => {
-                            // Ação de adicionar ao carrinho
-                            alert('Produto adicionado ao carrinho!');
-                            }}
-                        >
-                            ADICIONAR AO <FaShoppingCart />
+                        <Button variant="secondary" onClick={handleAddToCart}>
+                        ADICIONAR AO <FaShoppingCart />
                         </Button>
+                        <CartModal isVisible={showModal} onClose={() => setShowModal(false)} />
                     </ConteinerBtn>
 
                     <ProductMetaInfoContainer>
@@ -147,6 +195,13 @@ const ProductPage = () => {
                 </ItemSummaryWrapper>
             </SingleProductContainer>
                 <HorizontalAccordion />    
+                <ProductsSection 
+                    title="Produtos relacionados"
+                    endpoint="/api/mobiles" // só para referência futura 
+                    fallbackData={relatedProducts} 
+                />
+                <Newsletter />
+                <InstagramFeed token={token} />
         
     </Conteiner>
   )

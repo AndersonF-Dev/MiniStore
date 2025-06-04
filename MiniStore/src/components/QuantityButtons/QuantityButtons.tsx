@@ -1,31 +1,44 @@
 // QuantityButtons.tsx
-import React from 'react';
-import { useCart } from '../../context/CartContext';
+import React, { useState, useEffect } from 'react';
+// import { useCart } from '../../context/CartContext';
 import { Container, Button, QuantityDisplay } from './styleQuantityButtons';
 
 interface QuantityButtonsProps {
-  productId: string;
+  productId: number;
+  quantity: number;
+  onChange: (quantity: number) => void; // 👈 nova prop para avisar o pai da quantidade
   min?: number;
   max?: number;
 }
 
 const QuantityButtons: React.FC<QuantityButtonsProps> = ({
-  productId,
+  // productId,
+  quantity: propQuantity,
+  onChange,
   min = 1,
   max = 99,
+  // onChange,
 }) => {
-    const { updateQuantity, getQuantity } = useCart();
-    const quantity = getQuantity(productId);
+ const [quantity, setQuantity] = useState(propQuantity);
+
+  // 🟡 Sempre sincroniza com a prop (ex: ao abrir página de carrinho)
+  useEffect(() => {
+    setQuantity(propQuantity);
+  }, [propQuantity]);
 
   const handleDecrease = () => {
     if (quantity > min) {
-      updateQuantity(productId, quantity - 1);
+      const newQty = quantity - 1;
+      setQuantity(newQty);
+      onChange(newQty); // avisa o pai
     }
   };
 
   const handleIncrease = () => {
     if (quantity < max) {
-      updateQuantity(productId, quantity + 1);
+      const newQty = quantity + 1;
+      setQuantity(newQty);
+      onChange(newQty); // avisa o pai
     }
   };
 
