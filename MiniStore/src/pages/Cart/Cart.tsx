@@ -1,10 +1,10 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 // import { useState } from 'react';
 // import { useParams } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 // import { useNavigate } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import { product  as productData } from '../../data/productsData';
+// import { product  as productData } from '../../data/productsData';
 import InstagramFeed from '../../components/InstagramFeed/InstagramFeed';
 import Newsletter from '../../components/Newsletter/Newsletter';
 import QuantityButtons from '../../components/QuantityButtons/QuantityButtons';

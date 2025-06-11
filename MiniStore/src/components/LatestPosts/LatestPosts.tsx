@@ -43,6 +43,7 @@ const LatestPosts = ({ title, buttonText, posts, redirectTo = '/blogs' }: Latest
         <BtnReadBlogs onClick={handleClick}>{buttonText}</BtnReadBlogs>
       </TitleBtnWrapper>
 
+        
       <PostsWrapper>
         {posts.slice(0, 4).map((post) => (
           <Posts key={post.id}>

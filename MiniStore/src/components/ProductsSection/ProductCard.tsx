@@ -18,12 +18,12 @@ import {
 } from './styleProductsSection'; // ou seu arquivo de estilos
 
 type Props = {
-  id: number;
+  id?: number;
   image: string;
   name: string;
   price: string;
-  colors: string[];
-  size: string[];
+  colors?: string[];
+  size?: string[];
   stock?: number; // novo
 };
 

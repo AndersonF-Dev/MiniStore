@@ -108,6 +108,11 @@ export const theme = {
       align-items: center;
     `,
 
+    flexCenterColumn: `
+      align-items: center;
+      flex-direction: column;
+    `,
+
     center: `
       justify-content: center;
       align-items: center;
@@ -129,17 +134,39 @@ export const theme = {
       flex-direction: column;
       align-items: start;
     `,
+    flexAlignCentertColumn: `
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    `,
+    flexColumn: `
+      display: flex;
+      flex-direction: column;
+    `,
 
      flexSpaceBetween: `
       display: flex;
       justify-content: space-between;
       align-items: center;
     `,
+     flexSpaceBetweenWrap: `
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    `,
 
     flexJustifyCenter: `
       display: flex;
       justify-content: center;
     `,
+
+    flexJustifyCenterWrap: `
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    `,
+
     flexAlignItemsCenter: `
       display: flex;
       align-items: center;

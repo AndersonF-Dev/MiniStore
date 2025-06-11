@@ -48,7 +48,7 @@ export const ProductsSidebarWrapper = styled.section`
          gap: 1rem;
          /* width: 99%; */
          
-         background-color: olive;
+         /* background-color: olive; */
 
     }
 

@@ -1,29 +1,11 @@
 import styled from "styled-components";
 // import { theme } from "../../styles/theme";
-import { media, mixins } from "../../styles/theme/media";
+// import { media, mixins } from "../../styles/theme/media";
 
-
-// export const Conteiner = styled.aside<{ isOpen: boolean }>`
-//     ${mixins.flexAlignStartColumn}
-//     width: 20%;
-//     margin-top: 80px;
-
-    
-//     @media (max-width: 820px) {
-//     position: static;
-//     top: 0;
-//     right: 0;
-//     height: 100%;
-//     background-color: rgba(58, 58, 58, 0.79);
-//     z-index: 999;
-//     transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(-100%)")};
-//     box-shadow: ${({ isOpen }) => (isOpen ? "2px 0 8px rgba(0, 0, 0, 0.1)" : "none")};
-//   }
-// `;
 
 export const Conteiner = styled.aside`
   position: fixed;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   top: 0;
   left: -100%;
   width: 250px;
@@ -33,7 +15,7 @@ export const Conteiner = styled.aside`
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
-   overflow-x: hidden;
+  overflow-x: hidden;
   /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
 
   &.open {
@@ -88,6 +70,27 @@ export const Button = styled.button`
 
 export const FilterGroup = styled.div`
   margin-bottom: 30px;
+
+  &.categorias .scroll-wrapper,
+  &.tags .scroll-wrapper {
+    max-height: 200px; // ajuste conforme necessário
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .scroll-wrapper::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+
+  .scroll-wrapper::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
 `;
 
 export const Title = styled.h3`

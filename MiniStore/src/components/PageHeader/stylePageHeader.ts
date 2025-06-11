@@ -5,9 +5,14 @@ interface VariantProps {
 }
 
 export const Container = styled.div`
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   padding: 2rem 1rem;
   /* border-bottom: 1px solid #ccc; */
+
+  /* background-color: black; */
 `;
 
 export const Title = styled.h1<VariantProps>`

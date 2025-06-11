@@ -1,71 +1,28 @@
 import styled from "styled-components";
-// import { theme } from "../../styles/theme";
 import { media, mixins } from "../../styles/theme/media";
 
 export const Conteiner = styled.section`
-    /* ${mixins.flexJustifyCenterColumn} */
-    max-width: 49.1rem;
     width: 100%;
-    /* margin-top: 80px; */
+    max-width: 72.75rem;
+    font-family: ${({ theme}) => theme.fonts.secondary};
     
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: space-around; */
+
+    /* margin-top: 80px; */
+
     /* background-color: blue; */
-
-    //ipadMini 820px
-    @media ${media.ipadMini}{
-      width: 80%;
-    }
-    //tablet 768px
-    @media ${media.tablet}{
-      width: 84%;
-    }
-
-    //smallTablet 526px
-    @media ${media.smallTablet}{
-      width: 100%;
-      /* min-width: 39.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
-    //pixel7a 427px
-    @media ${media.pixel7a}{
-      width: 100%;
-      /* min-width: 49.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
-    //fold 426px
-    @media ${media.fold}{
-      width: 100%;
-      /* min-width: 49.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
-    //fold 426px
-    @media ${media.iphoneXR}{
-      width: 100%;
-      /* margin-left: 1rem; */
-      /* min-width: 49.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
 `;
 
+export const Wrapper = styled.div`
+    width: 100%;
+    display: flex;
+    /* height: 1500px; */
+    /* flex-direction: column; */
+    /* background-color: blueviolet; */
+`;
 export const ResultsSortingConteiner = styled.div`
     ${mixins.flexSpaceBetween}
     width: 100%;
@@ -76,7 +33,7 @@ export const ResultsTitle = styled.h3`
     color: #E0E0E0;
     font-size: 1rem;
     /* width: 100%; */
-    /* background-color: orange; */
+    /* background-color: olive; */
 
      //fold 426px
     @media ${media.fold}{
@@ -90,6 +47,7 @@ export const SortingTexto = styled.p`
     ${mixins.flexCenter}
     font-size: 1rem;
     color: #00BCD4;
+    display: none;
 
     /* background-color: blue; */
 
@@ -99,15 +57,77 @@ export const SortingTexto = styled.p`
     }
 `;
 
+export const Button = styled.button`
+  position: absolute;
+  top: 250px;
+  /* right: ; */
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 5px 10px;
+  /* border-radius: 50%; */
+  cursor: pointer;
+  z-index: 1001;
+
+  @media (min-width: 821px) {
+    display: none;
+  }
+
+  &:hover {
+    color: #0097a7;
+  }
+`;
+
+export const ProductsSidebarWrapper = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* gap: 2rem; */
+    padding: 0 1rem;
+    width: 100%;
+    /* margin-top: 80px; */
+
+    /* background-color: orange; */
+
+     /* @media ${media.laptop}{
+         gap: 1rem;
+         
+         
+         background-color: olive;
+
+    } */
+
+     //smallTablet 427px
+    @media ${media.smallTablet}{
+        padding: 0 0.3rem;
+    }
+     //pixel7a 427px
+    @media ${media.pixel7a}{
+        padding: 0 0.3rem;
+    }
+     //fold 426px
+    @media ${media.fold}{
+        padding: 0 0.3rem;
+    }
+     //fold 320px
+    @media ${media.mobileS}{
+        padding: 0 0.3rem;
+        background-color: blueviolet;
+        
+    }
+`;
+
 // estilos do card dos produtos
 
 export const CardContainer = styled.section`
+width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  /* gap: 16px; */
   flex-wrap: wrap;
-     /* background-color: orange; */
+
   /* background-color: olive; */
 
      //fold 426px
@@ -154,22 +174,6 @@ export const CardContainer = styled.section`
       margin-left: 7px;
       /* background-color: black; */
     }
-`;
-
-// export const ProductsCardConteiner = styled.div`
-
-// `;
-
-export const OutOfStockBadge = styled.div`
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background-color: red;
-  color: white;
-  padding: 4px 8px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 4px;
 `;
 
 export const PaginationWrapper = styled.div`

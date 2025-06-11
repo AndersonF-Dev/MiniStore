@@ -1,20 +1,63 @@
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  width: 97%;
+  width: 100%;
   background-color: #3A3A3A;
-  /* background-color: #242424; */
+  
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+
   min-width: 320px;
   min-height: 100vh;
 }
 
+ */
+
+ /* Reset padrão e box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis globais */
+/* :root {
+  --bg-color: #3A3A3A;
+  --min-width: 320px;
+  --max-width: 1350px;
+  --font-size-base: 1rem;
+  --font-size-fluid: clamp(1rem, 1.5vw, 1.2rem);
+} */
+
+:root {
+  width: 100%;
+  background-color: #3A3A3A;
+  
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Estilo base do body */
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-size: var(--font-size-fluid);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif; /* Ou sua fonte */
+}
 

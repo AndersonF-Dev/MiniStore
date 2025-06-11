@@ -11,4 +11,5 @@ export type ProductTypes = {
   sku: string;               
   category: string;           
   tags: string[]; 
+  brand?: string;
 };

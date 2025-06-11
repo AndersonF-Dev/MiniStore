@@ -1,4 +1,5 @@
 // src/styles/media.ts
+import { css } from "styled-components";
 import { theme } from "../../styles/theme";
 
 // Media queries
@@ -18,38 +19,59 @@ export const media = {
 
 // Cores
 export const colors = {
-  background: theme.colors.background,
-  background_SubMenu: theme.colors.background_SubMenu,
-  subtitle: theme.colors.subtitle,
-  title: theme.colors.title,
-  accent: theme.colors.accent,
-  dark: theme.colors.dark,
-  muted: theme.colors.muted,
+  // background: theme.colors.background,
+  // background_SubMenu: theme.colors.background_SubMenu,
+  // subtitle:`(color: ${theme.colors.subtitle})` ,
+  // title: theme.colors.title,
+  // accent: theme.colors.accent,
+  // dark: theme.colors.dark,
+  // muted: theme.colors.muted,
+
+  background: css`background-color: ${({ theme }) => theme.colors.background};`,
+  background_SubMenu: css`background-color: ${({ theme }) => theme.colors.background_SubMenu};`,
+  subtitle: css`color: ${({ theme }) => theme.colors.subtitle};`,
+  title: css`color: ${({ theme }) => theme.colors.title};`,
+  accent: css`color: ${({ theme }) => theme.colors.accent};`,
+  dark: css`color: ${({ theme }) => theme.colors.dark};`,
+  muted: css`color: ${({ theme }) => theme.colors.muted};`,
 };
 
 // Fontes
 export const fonts = {
-  primary: theme.fonts.primary,
-  secondary: theme.fonts.secondary,
+  // primary: `(font-family: ${theme.fonts.primary})`,
+  // secondary: `(font-family: ${theme.fonts.secondary})`,
+  primary: css`font-family: ${({ theme }) => theme.fonts.primary};`,
+  secondary: css`font-family: ${({ theme }) => theme.fonts.secondary};`,
 };
 
 // Tamanhos de fonte
 export const fontSizes = {
-  xs: theme.fontSizes.xs,
-  sm: theme.fontSizes.sm,
-  base: theme.fontSizes.base,
-  lg: theme.fontSizes.lg,
-  xl: theme.fontSizes.xl,
-  xxl: theme.fontSizes.xxl,
-  title: theme.fontSizes.title,
+  // xs: theme.fontSizes.xs,
+  // sm: theme.fontSizes.sm,
+  // base: theme.fontSizes.base,
+  // lg: theme.fontSizes.lg,
+  // xl: theme.fontSizes.xl,
+  // xxl: theme.fontSizes.xxl,
+  // title: theme.fontSizes.title,
+  xs: css`font-size: ${({ theme }) => theme.fontSizes.xs};`,
+  sm: css`font-size: ${({ theme }) => theme.fontSizes.sm};`,
+  base: css`font-size: ${({ theme }) => theme.fontSizes.base};`,
+  lg: css`font-size: ${({ theme }) => theme.fontSizes.lg};`,
+  xl: css`font-size: ${({ theme }) => theme.fontSizes.xl};`,
+  xxl: css`font-size: ${({ theme }) => theme.fontSizes.xxl};`,
+  title: css`font-size: ${({ theme }) => theme.fontSizes.title};`,
 };
 
 // Pesos de fonte
 export const fontWeights = {
-  light: theme.fontWeights.light,
-  regular: theme.fontWeights.regular,
-  medium: theme.fontWeights.medium,
-  bold: theme.fontWeights.bold,
+  // light: theme.fontWeights.light,
+  // regular: theme.fontWeights.regular,
+  // medium: theme.fontWeights.medium,
+  // bold: theme.fontWeights.bold,
+  light: css`font-weight: ${({ theme }) => theme.fontWeights.light};`,
+  regular: css`font-weight: ${({ theme }) => theme.fontWeights.regular};`,
+  medium: css`font-weight: ${({ theme }) => theme.fontWeights.medium};`,
+  bold: css`font-weight: ${({ theme }) => theme.fontWeights.bold};`,
 };
 
 // Espaçamentos
@@ -100,10 +122,15 @@ export const breakpoints = {
 // Mixins
 export const mixins = {
   flexCenter: theme.mixins.flexCenter,
+  flexColumn: theme.mixins.flexColumn,
   center: theme.mixins.center,
+  flexCenterColumn: theme.mixins.flexCenterColumn,
   flexSpaceBetween: theme.mixins.flexSpaceBetween,
+  flexSpaceBetweenWrap: theme.mixins.flexSpaceBetweenWrap,
   flexJustifyCenterColumn: theme.mixins.flexJustifyCenterColumn,
   flexJustifyCenter: theme.mixins.flexJustifyCenter,
+  flexJustifyCenterWrap: theme.mixins.flexJustifyCenterWrap,
+  flexAlignCentertColumn: theme.mixins.flexAlignCentertColumn,
   flexAlignItemsStart: theme.mixins.flexAlignItemsStart,
   flexAlignStartColumn: theme.mixins.flexAlignStartColumn,
   flexAlignStartColumnCenter: theme.mixins.flexAlignStartColumnCenter,
