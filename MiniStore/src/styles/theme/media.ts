@@ -126,6 +126,7 @@ export const mixins = {
   center: theme.mixins.center,
   flexCenterColumn: theme.mixins.flexCenterColumn,
   flexSpaceBetween: theme.mixins.flexSpaceBetween,
+  flexaligncenterJustifyaround: theme.mixins.flexaligncenterJustifyaround,
   flexSpaceBetweenWrap: theme.mixins.flexSpaceBetweenWrap,
   flexJustifyCenterColumn: theme.mixins.flexJustifyCenterColumn,
   flexJustifyCenter: theme.mixins.flexJustifyCenter,
@@ -137,6 +138,7 @@ export const mixins = {
   flexAlignItemsCenter: theme.mixins.flexAlignItemsCenter,
   fullWidth: theme.mixins.fullWidth,
   fullSize: theme.mixins.fullSize,
+  gridAlignItemsCenter: theme.mixins.gridAlignItemsCenter,
 };
 
 // Transições

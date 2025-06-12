@@ -1,15 +1,12 @@
 import styled from "styled-components";
-// import { theme } from "../../styles/theme";
-import { media } from "../../styles/theme/media";
+import { media, mixins, colors, fonts } from "../../styles/theme/media";
 
 export const Conteiner = styled.section`
     width: 100%;
     max-width: 72.75rem;
-    font-family: ${({ theme}) => theme.fonts.secondary};
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    ${mixins.flexaligncenterJustifyaround}
+    ${fonts.secondary}
+   
 
     //laptop: "1024px",  Laptops pequenos
      @media ${media.laptop}{
@@ -19,15 +16,11 @@ export const Conteiner = styled.section`
     @media ${media.ipadMini}{
         width: 49.7rem;
     }
-      //smallTablet: "526px",
-    @media ${media.smallTablet}{
-
-    }
-    //fold: "426px",
-    @media ${media.fold} {
+    //pixel7a: "427px",
+    @media ${media.pixel7a} {
         width: 26.3rem;
     }
-
+    
     //galaxyS: "360px",
     @media ${media.galaxyS}{
         width: 22.3rem;
@@ -35,27 +28,20 @@ export const Conteiner = styled.section`
 `;
 
 export const GridWrapper = styled.div`
-  width: 100%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: .1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    ${mixins.gridAlignItemsCenter}
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: .1rem;
 
     //ipadMini: "820px"
     @media ${media.ipadMini} {
         grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        align-items: center;
+        ${mixins.center}
     }
-
     //smallTablet: "526px",
     @media ${media.smallTablet} {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        align-items: center;
         width: 64%;
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
     }
     //pixel7a: "427px",
     @media ${media.pixel7a} {
@@ -64,71 +50,60 @@ export const GridWrapper = styled.div`
 
     //fold: "426px",
     @media ${media.fold}  {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        align-items: center;
         width: 100%;
     }
 
     //galaxys 360
     @media ${media.galaxyS} {
         grid-template-columns: 1fr;
-        justify-content: center;
-        align-items: center;
     }
 `;
 
-export const Conteiter = styled.div`
+export const Wrapper = styled.div`
     width: 17.988rem;
     width: 100%;
     display: flex;
     gap: .5rem;
-    margin: 80px auto 80px auto;
+    margin: 5rem auto 5rem auto;
 
      //laptop: "1024px",  Laptops pequenos
      @media ${media.laptop}{
         width: 14.1rem;
      }
-
     //ipadMini: "820px", 
     @media ${media.ipadMini}{
         grid-template-columns: repeat(2, 1fr);
-        margin: 20px auto 20px auto;
+        margin: 1.25rem auto 1.25rem auto;
         justify-content: center;
         width: 22.988rem;
     }
-
     //smallTablet: "526px",
     @media ${media.smallTablet}{
-        justify-content: center;
         width: 12.988rem;
     }
-
-     //pixel7a: "427px",
+    //pixel7a: "427px",
     @media ${media.pixel7a}{
         width: 10.988rem;
     }
-
     //fold: "426px"
     @media ${media.fold}{
         grid-template-columns: repeat(2, 1fr);
-        margin: 15px auto 8px auto;
-        justify-content: center;
+        margin: 0.938rem auto 0.5rem auto;
         width: 10.988rem;
     }
 `;
 
 export const Icon = styled.img`
-    height: 25px;
+    height: 1.563rem;
 
      //laptop: "1024px",  Laptops pequenos
      @media ${media.laptop}{
-        height: 18px;
+        height: 1.125rem;
      }
 
     //smallTablet: "526px",
     @media ${media.smallTablet}{
-        height: 19px;
+        height: 1.188rem;
     }
 `;
 
@@ -139,7 +114,7 @@ export const ConteinerText = styled.div`
 
 export const Title = styled.h4`
     font-size: 1.25rem;
-    color: #E0E0E0;
+    ${colors.title}
 
      //laptop: "1024px",  Laptops pequenos
      @media ${media.laptop}{
@@ -164,7 +139,7 @@ export const Title = styled.h4`
 
 export const SubTitle = styled.p`
     font-size: 1rem;
-    color: #B5B5B5;
+    ${colors.subtitle}
 
      //laptop: "1024px",  Laptops pequenos
      @media ${media.laptop}{

@@ -91,7 +91,7 @@ export const theme = {
     mobileS: "320px",       // iPhone SE
     galaxyS: "360px",       // Galaxy S8/S10/A50
     iphoneXR: "414px",      // iPhone XR / 11
-    pixel7a: "427px",
+    pixel7a: "437px",
     fold: "426px",          // Galaxy Fold fechado
     smallTablet: "526px",   // Dispositivos intermediários
     tablet: "768px",        // Tablets em retrato
@@ -122,6 +122,12 @@ export const theme = {
 	    flex-direction: column;
       justify-content: center;
 	    align-items: center;
+    `,
+
+    flexaligncenterJustifyaround: `
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
     `,
     flexAlignStartColumnCenter: `
       display: flex;
@@ -175,6 +181,12 @@ export const theme = {
       display: flex;
       justify-content: center;
       align-items: start;
+    `,
+
+    gridAlignItemsCenter: `
+      display: grid;
+      justify-content: center;
+      align-items: center;
     `,
     
     // ${({ theme }) => theme.mixins.fullWidth}

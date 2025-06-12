@@ -1,5 +1,4 @@
 // import React from 'react';
-// import Nav from '../../components/Nav/Nav';
 import Slider from '../../components/Slider/Slider';
 import Features from '../../components/Features/Features';
 import LatestPosts from '../../components/LatestPosts/LatestPosts';
@@ -9,20 +8,17 @@ import Sale from '../../components/Sale/Sale';
 import Testimonials from '../../components/Testimonials/Testimonials';
 import Newsletter from '../../components/Newsletter/Newsletter';
 import InstagramFeed from '../../components/InstagramFeed/InstagramFeed';
-// import Footer from '../../components/Footer/Footer'
 import ProductsSection from '../../components/ProductsSection/ProductsSection';
 import { mobileProducts, watchProducts } from '../../data/productsData';
 import {
     Conteiner
 } from './StyleHome';
-// import { data } from 'react-router-dom';
 
 const Home = () => {
    const token = "IGQVJ..."; // Depois virá da sua API em Node.js
    const posts = dataPost.posts;
   return (
     <Conteiner>
-        {/* <Nav /> */}
         <Slider />
         <Features items={homeFeatures} />
         <ProductsSection 

@@ -16,8 +16,6 @@ const images = [
   banner3,
 ];
 
-
-
 const Slider: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
