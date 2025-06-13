@@ -10,6 +10,7 @@ import Newsletter from '../../components/Newsletter/Newsletter';
 import InstagramFeed from '../../components/InstagramFeed/InstagramFeed';
 import ProductsSection from '../../components/ProductsSection/ProductsSection';
 import { mobileProducts, watchProducts } from '../../data/productsData';
+// import CartModal from '../../components/CartModal/CartModal';
 import {
     Conteiner
 } from './StyleHome';
@@ -17,6 +18,8 @@ import {
 const Home = () => {
    const token = "IGQVJ..."; // Depois virá da sua API em Node.js
    const posts = dataPost.posts;
+
+
   return (
     <Conteiner>
         <Slider />
@@ -39,7 +42,6 @@ const Home = () => {
         <Testimonials />
         <Newsletter />
         <InstagramFeed token={token} />
-        <h1>Home</h1>
     </Conteiner>
   )
 }

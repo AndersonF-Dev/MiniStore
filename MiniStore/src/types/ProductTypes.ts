@@ -13,3 +13,15 @@ export type ProductTypes = {
   tags: string[]; 
   brand?: string;
 };
+
+export interface Product {
+  id: string | number;
+  image: string;
+  name: string;
+  price: number;   // aqui price é number, importante padronizar
+  quantity?: number; // opcional para modal, etc.
+  stock?: number;
+  colors?: string[];
+  size?: string[];
+}
+

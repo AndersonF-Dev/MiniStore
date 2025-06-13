@@ -3,13 +3,26 @@ import { useState, useEffect } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import ProductCard from './ProductCard';
+import CartModal from '../../components/CartModal/CartModal';
+import { useCart } from '../../context/CartContext'; 
+import type { Product } from '../../types/ProductTypes'; // Certifique-se de que o caminho está correto
+ // Certifique-se de que o caminho está correto
 
 
-interface Product {
-  image: string;
-  name: string;
-  price: string;
-}
+// interface Product {
+//   id: number;
+//   image: string;
+//   name: string;
+//   price: string;
+//   stock?: number;
+//   quantity?: number;
+// }
+
+// interface CartModalProps {
+//   isVisible: boolean;
+//   onClose: () => void;
+//   product?: Product | null;
+// }
 
 interface ProductsCarouselProps {
   title: string;
@@ -17,8 +30,11 @@ interface ProductsCarouselProps {
 }
 
 const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
+  const { addToCart } = useCart();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
@@ -69,6 +85,18 @@ const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
     return () => clearInterval(intervalId);
   }, [slider, isPlaying]);
 
+   const handleAddToCart = (product: Product) => {
+    addToCart({
+      id: Number(product.id),
+      name: product.name,
+      price: Number(product.price),
+      image: product.image,
+      quantity: 1,
+    });
+    setSelectedProduct({ ...product, quantity:1});
+    setShowModal(true);
+  };
+
   return (
     <>
 
@@ -80,7 +108,13 @@ const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
       >
         {products.map((product, index) => (
           <div className="keen-slider__slide" key={index}>
-            <ProductCard {...product} />
+            <ProductCard
+            key={product.id}
+            {...product}
+            id={Number(product.id)}
+            price={String(product.price)}
+            onAddToCart={() => handleAddToCart(product)}
+          />
           </div>
         ))}
       </div>
@@ -101,6 +135,11 @@ const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
           }} />
         ))}
       </div>
+      <CartModal
+        isVisible={showModal}
+        onClose={() => setShowModal(false)}
+        product={selectedProduct}
+      />
     </>
   );
 };

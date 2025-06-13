@@ -12,7 +12,7 @@ import {
     Button
 } from './styleShop'
 
-const shop = () => {
+const Shop = () => {
     const token = "IGQVJ..."; // Depois virá da sua API em Node.js
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
      // Estado dos filtros
@@ -96,5 +96,5 @@ const shop = () => {
   )
 }
 
-export default shop
+export default Shop
 

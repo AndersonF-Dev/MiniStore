@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 
 // import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+import type { Product } from '../../types/ProductTypes'; // Certifique-se de que o caminho está correto
 import {
   Overlay,
   ModalBox,
@@ -14,9 +15,18 @@ import {
   Button,
 } from './styleCartModal'
 
+// interface Product {
+//   id: string | number;
+//   name: string;
+//   image: string;
+//   price: number;
+//   quantity: number;
+// }
+
 interface CartModalProps {
   isVisible: boolean;
   onClose: () => void;
+  product?: Product | null | undefined;
 }
 
 const CartModal: React.FC<CartModalProps> = ({ isVisible, onClose }) => {
@@ -44,29 +54,10 @@ const CartModal: React.FC<CartModalProps> = ({ isVisible, onClose }) => {
   }, [isVisible, onClose]);
 
   if (!isVisible) return null; // não renderiza nada se não estiver visível
-
   return (
     <Overlay isVisible={isVisible}>
       <ModalBox ref={modalRef} isVisible={isVisible}>
 
-        {/* <h3>Produto(s) adicionado(s):</h3>
-        <ul style={{ flex: 1, overflowY: 'auto', padding: 0, margin: 0 }}>
-          {cart.map(item => (
-            <li key={item.id} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem', listStyle: 'none' }}>
-              <img src={item.image} alt={item.name} width={60} height={60} style={{ objectFit: 'cover', borderRadius: '6px' }} />
-              <div>
-                <div><strong>{item.name}</strong></div>
-                <div>Preço: {item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</div>
-                <div>Quantidade: {item.quantity}</div>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <div style={{ marginTop: 'auto', display: 'flex', gap: '1rem' }}>
-
-          <button onClick={() => navigate('/cart')}>Ver Carrinho</button>
-          <button onClick={() => navigate('/checkout')}>Comprar Agora</button>
-        </div> */}
         <Title>
           Produto(s) adicionado(s):
         </Title>
@@ -77,7 +68,13 @@ const CartModal: React.FC<CartModalProps> = ({ isVisible, onClose }) => {
               <ProductImage src={item.image} alt={item.name} />
               <ProductInfo>
                 <div><strong>{item.name}</strong></div>
-                <div>Preço: {item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</div>
+                {/* <div key={item.id}>
+                  Preço: {item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</div> */}
+                  <div>
+                    Preço: {item.price != null
+                      ? item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+                      : 'R$ 0,00'}
+                  </div>
                 <div>Quantidade: {item.quantity}</div>
               </ProductInfo>
             </ProductItem>

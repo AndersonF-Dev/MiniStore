@@ -1,13 +1,4 @@
-feat(product-page): Corrige sincronização de quantidade no carrinho e adiciona estilização da exibição dos produtos
+refactor(products): separar interfaces do ProductsSection.tsx
 
-- Corrigido o componente QuantityButtons para sincronizar corretamente a quantidade recebida via props.
-- Adicionado useEffect para atualizar o estado local de quantity sempre que a prop mudar.
-- Garante que a quantidade escolhida na ProductPage seja refletida corretamente na página de Carrinho.
-- Ajustado uso de CartContext para refletir atualizações no carrinho (addToCart, updateQuantity).
-- Confirmado que o carrinho mantém os dados corretos ao navegar entre páginas.
-- Criada a estilização da exibição dos produtos no carrinho usando tabela com colunas: imagem, nome, preço, quantidade e total.
-- Estilização melhora a visualização e a organização dos itens adicionados ao carrinho.
-
-Essa atualização resolve problemas de sincronização e melhora a experiência visual e funcional do usuário na página de Carrinho.
-
- 
+- As interfaces foram movidas para um arquivo separado, melhorando a organização e legibilidade do código da página ProductsSection.
+- Corrigido o botão do carrossel "Móveis" na Home. Agora, ao clicar em "Ir para a loja", o usuário é redirecionado corretamente para a loja de produtos.

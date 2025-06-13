@@ -36,16 +36,6 @@ import {
     MetaValue,
 } from './styleProductPage'
 
-// type Produto = {
-//   id: number;
-//   nome: string;
-//   preco: number;
-// };
-
-// interface Props {
-//   produto: Produto;
-// }
-
 const ProductPage = () => {
     const token = "IGQVJ..."; // Depois virá da sua API em Node.js
 
