@@ -6,6 +6,7 @@ import { theme } from "../../styles/theme";
 export const media = {
   mobileS: `(max-width: ${theme.breakpoints.mobileS})`,
   galaxyS: `(max-width: ${theme.breakpoints.galaxyS})`,
+  Blackberry: `(max-width: ${theme.breakpoints.Blackberry})`,
   iphoneXR: `(max-width: ${theme.breakpoints.iphoneXR})`,
   pixel7a: `(max-width: ${theme.breakpoints.pixel7a})`,
   fold: `(max-width: ${theme.breakpoints.fold})`,
@@ -29,6 +30,8 @@ export const colors = {
 
   background: css`background-color: ${({ theme }) => theme.colors.background};`,
   background_SubMenu: css`background-color: ${({ theme }) => theme.colors.background_SubMenu};`,
+  background_suave: css`background-color: ${({ theme }) => theme.colors.background_suave};`,
+  background_dark: css`background-color: ${({ theme }) => theme.colors.background_dark};`,
   subtitle: css`color: ${({ theme }) => theme.colors.subtitle};`,
   title: css`color: ${({ theme }) => theme.colors.title};`,
   accent: css`color: ${({ theme }) => theme.colors.accent};`,
@@ -122,7 +125,9 @@ export const breakpoints = {
 // Mixins
 export const mixins = {
   flexCenter: theme.mixins.flexCenter,
+  flexBetween: theme.mixins.flexBetween,
   flexColumn: theme.mixins.flexColumn,
+  flexColumnJustifyCentert: theme.mixins.flexColumnJustifyCentert,
   center: theme.mixins.center,
   flexCenterColumn: theme.mixins.flexCenterColumn,
   flexSpaceBetween: theme.mixins.flexSpaceBetween,

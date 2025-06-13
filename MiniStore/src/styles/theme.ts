@@ -2,7 +2,9 @@
 export const theme = {
   colors: {
     background: "#3A3A3A", // Cor principal de fundo do site
+    background_suave: "#9A9FA3", // Cor principal de fundo do site
     background_SubMenu: "rgba(58, 58, 58, 0.79)", // Fundo do submenu com transparência
+    background_dark: "#272727", // Cor de fundo escuro para contrastes
     subtitle: "#B5B5B5", // Cor de subtítulos ou textos secundários
     title: "#E0E0E0", // Cor de títulos ou textos principais
     accent: "#00BCD4", // Cor de destaque (botões, links)
@@ -94,8 +96,9 @@ export const theme = {
     pixel7a: "437px",
     fold: "426px",          // Galaxy Fold fechado
     smallTablet: "526px",   // Dispositivos intermediários
+    Blackberry : "600px",   // Dispositivos intermediários
     tablet: "768px",        // Tablets em retrato
-    ipadMini: "820px",      // iPad Mini / Air em retrato
+    ipadMini: "834px",      // iPad Mini / Air em retrato
     laptop: "1024px",       // Laptops pequenos
     customDesktop: "1365px",// Resolução intermediária comum (ex: notebooks maiores)
     laptopL: "1440px",      // Desktops grandes
@@ -145,6 +148,11 @@ export const theme = {
       flex-direction: column;
       align-items: center;
     `,
+    flexColumnJustifyCentert: `
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    `,
     flexColumn: `
       display: flex;
       flex-direction: column;
@@ -176,6 +184,10 @@ export const theme = {
     flexAlignItemsCenter: `
       display: flex;
       align-items: center;
+    `,
+    flexBetween: `
+      display: flex;
+      justify-content: space-between;
     `,
     flexAlignItemsStart: `
       display: flex;

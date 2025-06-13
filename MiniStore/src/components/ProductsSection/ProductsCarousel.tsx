@@ -1,33 +1,12 @@
-
 import { useState, useEffect } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import ProductCard from './ProductCard';
 import CartModal from '../../components/CartModal/CartModal';
 import { useCart } from '../../context/CartContext'; 
+import type { ProductsCarouselProps } from './interfaces/ProductsCarouselProps';
 import type { Product } from '../../types/ProductTypes'; // Certifique-se de que o caminho está correto
- // Certifique-se de que o caminho está correto
-
-
-// interface Product {
-//   id: number;
-//   image: string;
-//   name: string;
-//   price: string;
-//   stock?: number;
-//   quantity?: number;
-// }
-
-// interface CartModalProps {
-//   isVisible: boolean;
-//   onClose: () => void;
-//   product?: Product | null;
-// }
-
-interface ProductsCarouselProps {
-  title: string;
-  products: Product[];
-}
+ 
 
 const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
   const { addToCart } = useCart();
@@ -50,8 +29,14 @@ const ProductsCarousel = ({ products }: ProductsCarouselProps) => {
       slides: { perView: 4, spacing: 10 },
     },
 
-    "(max-width: 526px)": {
+    "(max-width: 834px)": {
       slides: { perView: 3, spacing: 5 },
+    },
+    "(max-width: 600px)": {
+      slides: { perView: 2, spacing: 5 },
+    },
+    "(max-width: 526px)": {
+      slides: { perView: 2, spacing: 5 },
     },
 
     "(max-width: 427px)": {

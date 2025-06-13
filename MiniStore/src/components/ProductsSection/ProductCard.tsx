@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { FaShoppingCart } from 'react-icons/fa';
+import type {ProductCardProps} from './interfaces/ProductCard.interface'; // ajuste o caminho conforme necessário
 
 import {
   CardWrapper,
@@ -15,18 +16,8 @@ import {
   OutOfStockBadge
 } from './styleProductsSection'; // ou seu arquivo de estilos
 
-type Props = {
-  id: number;
-  image: string;
-  name: string;
-  price: string;
-  colors?: string[];
-  size?: string[];
-  stock?: number; // novo
-  onAddToCart?: () => void;
-};
 
-const ProductCard: React.FC<Props> = ({ 
+const ProductCard: React.FC<ProductCardProps> = ({ 
   id, 
   image, 
   name, 
@@ -68,7 +59,6 @@ const ProductCard: React.FC<Props> = ({
           <ProductPrice>{Number(price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</ProductPrice>
         </Info>
       </CardWrapper>
-              {/* <CartModal isVisible={showModal} onClose={() => setShowModal(false)} /> */}
     </motion.div>
   );
 };
