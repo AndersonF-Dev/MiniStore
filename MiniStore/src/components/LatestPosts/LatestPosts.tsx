@@ -1,7 +1,5 @@
+import type { LatestPostsProps } from './type';
 
-// import post1 from '../../assets/img/post1.png'
-
-// import { useNavigate } from 'react-router-dom'
 import {
   Conteiner,
   TitleBtnWrapper,
@@ -12,22 +10,10 @@ import {
   InforPostWrapper,
   ImgPost,
   DatePost,
-  TitlePost
+  TitlePost,
+  StyledLink
 } from './styleLatestPosts'
 
-type Post = {
-  id: string
-  image: string
-  date: string
-  title: string
-}
-
-type LatestPostsProps = {
-  title: string
-  buttonText: string
-  posts: Post[]
-  redirectTo?: string // rota para redirecionar (ex: "/blogs")
-}
 
 const LatestPosts = ({ title, buttonText, posts, redirectTo = '/blogs' }: LatestPostsProps) => {
 //   const navigate = useNavigate()
@@ -48,9 +34,11 @@ const LatestPosts = ({ title, buttonText, posts, redirectTo = '/blogs' }: Latest
         {posts.slice(0, 4).map((post) => (
           <Posts key={post.id}>
             <ImgPost src={post.image} alt={`post-${post.id}`} />
-            <InforPostWrapper>
+            <InforPostWrapper key={post.id}>
               <DatePost>{post.date}</DatePost>
-              <TitlePost>{post.title}</TitlePost>
+              <StyledLink to={`/blog/${post.slug}`}>
+                <TitlePost>{post.title}</TitlePost>
+              </StyledLink>
             </InforPostWrapper>
           </Posts>
         ))}

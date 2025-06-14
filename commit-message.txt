@@ -1,4 +1,5 @@
-refactor(products): separar interfaces do ProductsSection.tsx
+feat(latest-posts): organiza types, refatora componente e melhora responsividade
 
-- As interfaces foram movidas para um arquivo separado, melhorando a organização e legibilidade do código da página ProductsSection.
-- Corrigido o botão do carrossel "Móveis" na Home. Agora, ao clicar em "Ir para a loja", o usuário é redirecionado corretamente para a loja de produtos.
+- Tipagens extraídas para um arquivo separado, melhorando a organização do código
+- Refatoração geral do componente LatestPosts.tsx para melhorar legibilidade e estrutura
+- Ajustes nas media queries para melhor adaptação em diferentes tamanhos de tela

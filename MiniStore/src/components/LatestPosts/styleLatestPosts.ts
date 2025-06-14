@@ -1,193 +1,95 @@
 import styled from "styled-components";
-import { media } from "../../styles/theme/media";
+import { Link } from 'react-router-dom';
+import { media, mixins, colors } from "../../styles/theme/media";
 
 export const Conteiner = styled.section`
-    width: 72.75rem;
-    height: 26rem;
+    max-width: 72.75rem;
+    width: 100%;
+
+    ${mixins.flexColumnJustifyCentert}
+
+    height: auto;
+    padding: 0.625rem;
     margin: 5rem 0;
-    /* background-color: blue; */
-    
-    //laptop: "1024px", 
-    @media ${media.laptop}{
-        width: 63.9rem;
-        padding: 0 .6rem;
-        
-        /* background-color: cornflowerblue; */
-    }
-    //ipadMini: "820px",
-    @media ${media.ipadMini}{
-        width: 51.1rem;
-        height: 50.8rem;
-
-        display: flex;
-        flex-direction: column;
-        /* justify-content: center; */
-        align-items: center;
-        padding: 0 .6rem;
-        /* background-color: aqua; */
-    }
-
-    //tablet: "768px",
-    @media ${media.tablet}{
-        width: 47.9rem;
-        heigth: 90.2rem;
-        padding: 0 .6rem;
-
-        /* background-color: orchid; */
-    }
-    //smallTablet: "526px",
-    @media ${media.smallTablet}{
-        width: 32.7rem;
-        heigth: 90.2rem;
-        padding: 0 .6rem;
-    }
-
-    //pixel7a: "427px",
-   @media ${media.pixel7a}{
-    width: 26.5rem;
-    height: 100.4rem;
-    /* background-color: violet; */
-   }
-    //fold: "426px",
-   @media ${media.fold}{
-    width: 26.5rem;
-    height: 100.4rem;
-    /* background-color: violet; */
-   }
-    //iphoneXR: "414px",
-   @media ${media.iphoneXR}{
-    width: 25.8rem;
-    height: 100.4rem;
-    /* background-color: violet; */
-   }
-    //galaxyS: "360px",
-   @media ${media.galaxyS}{
-    width: 22.3rem;
-    height: 100.0rem;
-    /* background-color: violet; */
-   }
-    //mobileS: "320px",
-   @media ${media.mobileS}{
-    width: 19.88rem;
-    height: 100.0rem;
-    /* background-color: violet; */
-   }
-    
 `;
 
 export const TitleBtnWrapper = styled.div`
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    ${mixins.flexSpaceBetween}
     padding: .5rem 0;
-
-    /* background-color: olive; */
 `;
 
 export const Title = styled.h3`
-    font-size: 1.575rem;
-    color: #E0E0E0;
-
-      //galaxyS: "360px",
-   @media ${media.galaxyS}{
-    font-size: 1.2rem;
-   }
+     font-size: clamp(1rem, 2.5vw, 1.575rem);
+    ${colors.title}
 `;
 
 export const BtnReadBlogs = styled.button`
     width: 6.125rem;
     background: none;
-    border: none;
     cursor: pointer;
-    color: #43C5D5;
+    
+    ${colors.accent}
+    border: none;
     border-bottom: 0.188rem solid #43C5D5;
 `;
 
 export const PostsWrapper = styled.div`
     width: 100%;
+    max-width: 59rem;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0rem;
-    /* background-color:rgb(202, 49, 49); */
-    /* width: 100%;
-    height: 23rem;
-    display: flex;
-    gap: 2rem; */
-    /* justify-content: space-around; */
-
-    /* border: 2px solid red; */
-    /* background-color: orange; */
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.customDesktop}) {
-    
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    
-  }
+    gap: 1.0rem;
 
-  @media (max-width: ${({ theme}) => theme.breakpoints.ipadMini}) {
-     grid-template-columns: repeat(2, 1fr);
-     /* justify-content: center; */
-     /* align-items: center; */
-     width: 80%;
-     gap: 1.9rem;
-     text-align: center;
-     padding: .1rem;
-     /* place-items: center; */
-   }
+    padding: 0;
+    margin: 0 auto; 
+
+    //ipadMini: "837px",
+    @media ${media.ipadMini} {
+        grid-template-columns: repeat(2, 1fr);
+   
+        width: 70%;
+        gap: 1.9rem;
+        text-align: center;
+        padding: .1rem;
+    }
+    //Blackberry: "600px",
+    @media ${media.Blackberry} {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 1.0rem;
+
+    }
     //smallTablet: "526px",
     @media ${media.smallTablet} {
      grid-template-columns: repeat(2, 1fr);
+     width: 100%;
      text-align: center;
      place-items: center;
-     width: 100%;
-   }
-
-   //pixel7a: "427px",
-   @media ${media.pixel7a}{
+    }
+    //pixel7a: "427px",
+    @media ${media.pixel7a}{
     grid-template-columns: 1fr;
-    /* width: ; */
-    /* background-color: orange; */
-   }
-   //iphoneXR: "414px",
-   @media ${media.iphoneXR}{
-    grid-template-columns: 1fr;
-    /* width: ; */
-    /* background-color: orange; */
-   }
-   //galaxyS: "360px",
-   @media ${media.galaxyS}{
-    grid-template-columns: 1fr;
-    /* width: ; */
-    /* background-color: violet; */
-   }
+    text-align: center;
+    }
 `;
 
 export const Posts = styled.div`
-    width: 17.15rem;
-    height: 22.9rem;
+    width: auto;
+    height: auto;
     overflow: hidden;
 
-    /* background-color: aqua; */
-    /* border: 2px solid orange; */
-
-     //laptop: "1024px", 
-    @media ${media.laptop}{
-        width: 14.1rem;
-        /* background-color: orange; */
-    }
-
-   //smallTablet: "526px",
-    @media ${media.smallTablet}{
-        width: 14.7rem;
-    }
+    ${mixins.flexJustifyCenterColumn}
 `;
 
 export const ImgPost = styled.img`
-    width: 16.85rem;
+    width: 98%;
+    max-width: 16.85rem;
     height: 17.625rem;
     border-radius: 0.958rem;
-
+    margin-bottom: 0.8rem;
+    
      //laptop: "1024px", 
     @media ${media.laptop}{
         width: 14.0rem;
@@ -201,20 +103,44 @@ export const ImgPost = styled.img`
 
 export const InforPostWrapper = styled.div`
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    max-width: 16.85rem;
+
+    ${mixins.flexColumn}
     gap: .5rem;
+
     padding-top: .5rem;
     text-align: left;
+
+    //pixel7a: "427px",
+   @media ${media.pixel7a}{
+    text-align: center;
+   }
 `;
 
 export const DatePost = styled.span`
     font-size: 0.813rem;
-    color: #B5B5B5;
-    /* margin: 1rem 0; */
+    ${colors.subtitle}
 `;
 
 export const TitlePost = styled.h2`
-    font-size: 1.25rem;
-    color: #E0E0E0;
+    font-size: 1.15rem;
+    ${colors.title}
+    transform: scale(1);
+    transition: transform 0.3s ease;
+
+     &:hover {
+        transform: scale(.97);    
+      ${colors.accent}
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  ${colors.title}
+  font-weight: 500;
+
+  &:hover {
+      ${colors.accent}
+      text-decoration: underline;
+  }
 `;
