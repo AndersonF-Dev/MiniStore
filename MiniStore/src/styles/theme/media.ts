@@ -37,6 +37,7 @@ export const colors = {
   accent: css`color: ${({ theme }) => theme.colors.accent};`,
   dark: css`color: ${({ theme }) => theme.colors.dark};`,
   muted: css`color: ${({ theme }) => theme.colors.muted};`,
+  arrow: css`color: ${({ theme }) => theme.colors.arrow};`,
 };
 
 // Fontes

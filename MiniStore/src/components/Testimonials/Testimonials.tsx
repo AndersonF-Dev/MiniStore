@@ -1,47 +1,3 @@
-
-// import quote from '../../assets/icon/double-quote.svg'
-// import {
-//     Conteiner,
-//     Content,
-//     Img,
-//     Review,
-//     ArrowLeft,
-//     ArrowRight,
-//     ReviewStarNameConteiner,
-//     StarContenter,
-//     Star,
-//     NameAutor
-// } from './styleTestimonials'
-
-// const Testimonials = () => {
-//   return (
-//     <Conteiner>
-//         <ArrowLeft />
-//             <Content>
-//                 <Img src={quote} alt="icon"/>
-//                 <Review>
-//                     “O desempenho desse celular me surpreendeu! Rápido, fluido e com um design elegante. A bateria dura o dia todo mesmo com uso intenso, e a qualidade da câmera é excelente — perfeita para registrar todos os momentos. Estou muito satisfeito com a minha escolha!”
-//                 </Review>
-//                 <ReviewStarNameConteiner>
-//                     <StarContenter>
-//                         <Star />
-//                         <Star />
-//                         <Star />
-//                         <Star />
-//                         <Star />
-//                     </StarContenter>
-//                     <NameAutor>
-//                         Emma Chamberlin
-//                     </NameAutor>
-//                 </ReviewStarNameConteiner>
-//             </Content>
-//         <ArrowRight />
-//     </Conteiner>
-//   )
-// }
-
-// export default Testimonials
-
 import { useEffect, useState } from 'react';
 import { testimonialsData } from '../../data/testimonialsData';
 import type { Testimonial } from '../../data/testimonialsData';
@@ -57,7 +13,7 @@ import {
     ReviewStarNameConteiner,
     StarContenter,
     NameAutor,
-    StyledIconWrapper
+    StyledIconWrapper,
 } from './styleTestimonials';
 
 

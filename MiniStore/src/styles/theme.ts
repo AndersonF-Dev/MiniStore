@@ -10,6 +10,7 @@ export const theme = {
     accent: "#00BCD4", // Cor de destaque (botões, links)
     dark: "#272727", // Cor escura para contrastes ou fundos alternativos
     muted: "#A0A0A0",
+    arrow: "#D7DDDF",
   },
 
   fonts: {

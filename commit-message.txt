@@ -1,5 +1,3 @@
-feat(latest-posts): organiza types, refatora componente e melhora responsividade
+refactor(testimonials): refatoração do componente com melhorias de legibilidade e responsividade
 
-- Tipagens extraídas para um arquivo separado, melhorando a organização do código
-- Refatoração geral do componente LatestPosts.tsx para melhorar legibilidade e estrutura
-- Ajustes nas media queries para melhor adaptação em diferentes tamanhos de tela
+Foi feito um refaturamento no código do componente Testimonials.tsx para deixá-lo mais legível, escalável e organizado. Também foram aplicadas melhorias na responsividade para melhor adaptação em diferentes tamanhos de tela.
