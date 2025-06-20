@@ -1,4 +1,3 @@
-
 export const theme = {
   colors: {
     background: "#3A3A3A", // Cor principal de fundo do site
@@ -24,7 +23,7 @@ export const theme = {
     base: "1rem", // Tamanho padrão para parágrafos
     lg: "1.25rem", // Fonte grande – subtítulos
     xl: "1.5rem", // Fonte extra grande – títulos
-    xxl: '1.8rem',
+    xxl: "1.8rem",
     title: "2rem", // Tamanho de fonte para títulos principais
   },
 
@@ -38,13 +37,13 @@ export const theme = {
   spacing: {
     x: "0",
     xxs: "0.25rem",
-    xxxs: "0.3rem",   // Espaçamento muito pequeno
-    xxxxs: "0.5rem",    // Espaçamento extra pequeno
+    xxxs: "0.3rem", // Espaçamento muito pequeno
+    xxxxs: "0.5rem", // Espaçamento extra pequeno
     xxxxxs: "0.125rem",
-    sm: "1rem",      // Espaçamento pequeno
-    md: "1.5rem",    // Espaçamento médio
-    lg: "1.8rem",    // Espaçamento médio-grande
-    xl: "2rem",      // Espaçamento grande
+    sm: "1rem", // Espaçamento pequeno
+    md: "1.5rem", // Espaçamento médio
+    lg: "1.8rem", // Espaçamento médio-grande
+    xl: "2rem", // Espaçamento grande
     xxl: "3.75rem",
   },
 
@@ -76,7 +75,7 @@ export const theme = {
     default: "all 0.3s ease", // Transição padrão para animações suaves
     fast: "all 0.15s ease", // Transição rápida para feedback rápido
     all: "all 0.3s ease-in-out", // transição completa
-    slow: "all 0.5s ease-out", 
+    slow: "all 0.5s ease-out",
   },
 
   containers: {
@@ -91,21 +90,21 @@ export const theme = {
   },
 
   breakpoints: {
-    mobileS: "320px",       // iPhone SE
-    galaxyS: "360px",       // Galaxy S8/S10/A50
-    iphoneXR: "414px",      // iPhone XR / 11
+    mobileS: "320px", // iPhone SE
+    galaxyS: "360px", // Galaxy S8/S10/A50
+    iphoneXR: "414px", // iPhone XR / 11
     pixel7a: "437px",
-    fold: "426px",          // Galaxy Fold fechado
-    smallTablet: "526px",   // Dispositivos intermediários
-    Blackberry : "600px",   // Dispositivos intermediários
-    tablet: "768px",        // Tablets em retrato
-    ipadMini: "834px",      // iPad Mini / Air em retrato
-    laptop: "1024px",       // Laptops pequenos
-    customDesktop: "1365px",// Resolução intermediária comum (ex: notebooks maiores)
-    laptopL: "1440px",      // Desktops grandes
+    fold: "426px", // Galaxy Fold fechado
+    smallTablet: "526px", // Dispositivos intermediários
+    Blackberry: "600px", // Dispositivos intermediários
+    tablet: "768px", // Tablets em retrato
+    ipadMini: "834px", // iPad Mini / Air em retrato
+    laptop: "1024px", // Laptops pequenos
+    customDesktop: "1365px", // Resolução intermediária comum (ex: notebooks maiores)
+    laptopL: "1440px", // Desktops grandes
   },
 
-   mixins: {
+  mixins: {
     flexCenter: `
       display: flex;
       justify-content: center;
@@ -159,15 +158,15 @@ export const theme = {
       flex-direction: column;
     `,
 
-     flexSpaceBetween: `
+    flexSpaceBetween: `
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     `,
-     flexSpaceBetweenWrap: `
+    flexSpaceBetweenWrap: `
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
     `,
 
@@ -178,6 +177,12 @@ export const theme = {
 
     flexJustifyCenterWrap: `
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    `,
+    flexCenterWrap: `
+      display: flex;
+      align-items: center;
       justify-content: center;
       flex-wrap: wrap;
     `,
@@ -201,9 +206,30 @@ export const theme = {
       justify-content: center;
       align-items: center;
     `,
-    
+    flexColumnflexstart: `
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    `,
+
+    flexColumnCenterEvenly: `
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    `,
+    flexColumnEvenly: `
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    `,
+    flexSpaceEevenly: `
+      display: flex;
+      justify-content: space-evenly;
+    `,
+
     // ${({ theme }) => theme.mixins.fullWidth}
-     fullWidth: `
+    fullWidth: `
       width: 100%;
     `,
     // opcionalmente:
@@ -214,21 +240,19 @@ export const theme = {
   },
 
   sizes: {
-    largeContainer: "32.77rem",  // usado para seções amplas
+    largeContainer: "32.77rem", // usado para seções amplas
     mediumContainer: "26.77rem", // usado para seções médias
-    smallContainer: "22.77rem",  // usado para blocos pequenos
+    smallContainer: "22.77rem", // usado para blocos pequenos
   },
 
   layoutWidths: {
-    narrow: "30%",   // usado para colunas pequenas
-    medium: "38%",   // colunas médias
-    wide: "45%",     // colunas largas
+    narrow: "30%", // usado para colunas pequenas
+    medium: "38%", // colunas médias
+    wide: "45%", // colunas largas
   },
 
   offsets: {
-  belowFull: "100%",   // Posiciona exatamente abaixo do pai
-  belowHalf: "50%",    // Posiciona no meio do pai
-},
-
+    belowFull: "100%", // Posiciona exatamente abaixo do pai
+    belowHalf: "50%", // Posiciona no meio do pai
+  },
 };
-

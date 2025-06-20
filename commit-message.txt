@@ -1,3 +1,10 @@
-refactor(testimonials): refatoração do componente com melhorias de legibilidade e responsividade
+refactor: organizar e limpar estrutura de componentes e estilos
 
-Foi feito um refaturamento no código do componente Testimonials.tsx para deixá-lo mais legível, escalável e organizado. Também foram aplicadas melhorias na responsividade para melhor adaptação em diferentes tamanhos de tela.
+- Refatorado o componente styleFooter.ts para código mais limpo
+- Refatorado o componente styleNav.ts para código mais limpo
+- Adicionados os links de redirecionamento nas páginas do menu em Nav.tsx
+- Separados os types do componente CartModal.tsx para melhor organização
+- Refatorado o componente styleAbaut.ts
+- Refatorado o componente styleBlogCard.ts
+- Separados os types do componente BlogCard.tsx
+- Refatorado o componente styleBlog.ts

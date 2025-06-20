@@ -128,9 +128,11 @@ export const mixins = {
   flexCenter: theme.mixins.flexCenter,
   flexBetween: theme.mixins.flexBetween,
   flexColumn: theme.mixins.flexColumn,
+  flexCenterWrap: theme.mixins.flexCenterWrap,
   flexColumnJustifyCentert: theme.mixins.flexColumnJustifyCentert,
   center: theme.mixins.center,
   flexCenterColumn: theme.mixins.flexCenterColumn,
+  flexColumnflexstart: theme.mixins.flexColumnflexstart,
   flexSpaceBetween: theme.mixins.flexSpaceBetween,
   flexaligncenterJustifyaround: theme.mixins.flexaligncenterJustifyaround,
   flexSpaceBetweenWrap: theme.mixins.flexSpaceBetweenWrap,
@@ -145,6 +147,9 @@ export const mixins = {
   fullWidth: theme.mixins.fullWidth,
   fullSize: theme.mixins.fullSize,
   gridAlignItemsCenter: theme.mixins.gridAlignItemsCenter,
+  flexColumnCenterEvenly: theme.mixins.flexColumnCenterEvenly,
+  flexSpaceEevenly: theme.mixins.flexSpaceEevenly,
+  flexColumnEvenly: theme.mixins.flexColumnEvenly,
 };
 
 // Transições

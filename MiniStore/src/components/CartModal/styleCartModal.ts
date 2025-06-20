@@ -1,14 +1,15 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { media, colors, mixins } from "../../styles/theme/media";
 
 interface ButtonProps {
-  variant?: 'primary' | 'secondary';
+  variant?: "primary" | "secondary";
 }
 
 export const Overlay = styled.div<{ isVisible: boolean }>`
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0,0.4);
-  display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
+  background-color: rgba(0, 0, 0, 0.4);
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: 1000;
 `;
 
@@ -17,24 +18,28 @@ export const ModalBox = styled.div<{ isVisible: boolean }>`
   top: 0;
   right: 0;
   height: 100vh;
-  width: 350px;
+  max-width: 350px;
+  width: 78%;
   background: #3a3a3a6a;
-  /* box-shadow: -3px 0 10px rgba(0,0,0,0.3); */
+
   padding: 1.5rem;
-  border-radius: 0 0 0 12px;
 
   /* animação sliding */
-  transform: ${({ isVisible }) => (isVisible ? 'translateX(0)' : 'translateX(100%)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateX(0)" : "translateX(100%)"};
   transition: transform 0.3s ease-in-out;
   z-index: 1001;
 
-  display: flex;
-  flex-direction: column;
+  ${mixins.flexColumn}
 `;
 
 export const Title = styled.h3`
   font-size: 1.4rem;
   margin-bottom: 1.5rem;
+
+  @media ${media.galaxyS} {
+    font-size: 1rem;
+  }
 `;
 
 export const ProductList = styled.ul`
@@ -45,15 +50,12 @@ export const ProductList = styled.ul`
 `;
 
 export const ProductItem = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  list-style: none;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid;
+  ${mixins.flexSpaceBetween}
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  gap: 0.1rem;
 
-   &:last-child {
+  &:last-child {
     border-bottom: none;
   }
 `;
@@ -65,9 +67,13 @@ export const ProductImage = styled.img`
   border-radius: 6px;
 `;
 
-export const ProductInfo = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ProductCenterContent = styled.div`
+  flex: 1;
+  ${mixins.flexJustifyCenterColumn}
+
+  text-align: center;
+  font-size: 0.9rem;
+  ${colors.title}
 `;
 
 export const FooterButtons = styled.div`
@@ -77,20 +83,64 @@ export const FooterButtons = styled.div`
 `;
 
 export const Button = styled.button<ButtonProps>`
-     padding: 10px 20px;
-      background-Color: #00BCD4;
-      color: ${({ variant }) =>
-    variant === 'secondary' ? '#E0E0E0' : '#272727'};
-      border: none;
-      border-Radius: 5px;
-      cursor: pointer;
-      font-Weight: bold;
-       transition: background 0.3s;
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: ${({ variant }) => (variant === "secondary" ? "#E0E0E0" : "#272727")};
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  transform: scale(1);
+  transition: transform 0.4s ease;
 
   background-color: ${({ variant }) =>
-    variant === 'secondary' ? '#1E1E1E' : '#00BCD4'};
+    variant === "secondary" ? "#1E1E1E" : "#00BCD4"};
 
-     &:hover {
+  &:hover {
+    transform: scale(1.1);
     opacity: 0.9;
+  }
+
+  @media ${media.galaxyS} {
+    font-size: 0.7rem;
+    padding: 10px 5px;
+  }
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(248, 6, 6);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    color: rgb(248, 6, 6);
+  }
+`;
+
+export const DeleteButton = styled.button`
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  ${mixins.flexCenter}
+  transform: scale(1);
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    color: #c0392b;
   }
 `;

@@ -9,7 +9,7 @@ import produto2 from '../assets/img/relogio.png'
 // Lista de produtos móveis
 export const mobileProducts = [
   { id: '1', image: produto1, name: 'Iphone 10', price: 1000.00, stock: 3 },
-  { id: '2', image: produto1, name: 'Samsung Galaxy S21', price: 899.00 , stock: 3},
+  { id: '2', image: produto1, name: 'Samsung Galaxy S21', price: 899.00, stock: 3},
   { id: '3', image: produto1, name: 'Motorola G60', price: 799.00, stock: 3 },
   { id: '4', image: produto1, name: 'Xiaomi Redmi Note 11', price: 850.00, stock: 3 },
   { id: '5', image: produto1, name: 'Asus Zenfone 8', price: 1200.00, stock: 3 },

@@ -2,7 +2,7 @@ export type ProductCardProps = {
   id: number;
   image: string;
   name: string;
-  price: string;
+  price: number;
   colors?: string[];
   size?: string[];
   stock?: number;

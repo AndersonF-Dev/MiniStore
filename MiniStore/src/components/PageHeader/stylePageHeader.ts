@@ -1,29 +1,20 @@
 import styled from "styled-components";
-// import { theme } from "../../styles/theme";
+import { mixins } from "../../styles/theme/media";
+
 interface VariantProps {
-  variant?: 'default' | 'product';
+  variant?: "default" | "product";
 }
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${mixins.flexAlignCentertColumn}
   width: 100%;
   padding: 2rem 1rem;
-  /* border-bottom: 1px solid #ccc; */
-
-  /* background-color: black; */
 `;
 
 export const Title = styled.h1<VariantProps>`
-  /* font-size: 5.188rem;
+  font-size: ${({ variant }) => (variant === "product" ? "3rem" : "5.188rem")};
   margin-bottom: 0.5rem;
-  color: #E0E0E0; */
-
-  font-size: ${({ variant }) => (variant === 'product' ? '3rem' : '5.188rem')};
-  margin-bottom: 0.5rem;
-  color: ${({ variant }) =>
-    variant === 'product' ? '#333' : '#E0E0E0'};
+  color: ${({ variant }) => (variant === "product" ? "#333" : "#E0E0E0")};
 `;
 
 export const Breadcrumb = styled.div<VariantProps>`
@@ -31,13 +22,12 @@ export const Breadcrumb = styled.div<VariantProps>`
 
   a {
     text-decoration: none;
-    /* color: #D8D4D4; */
-    color: ${({ variant }) => (variant === 'product' ? '#777' : '#D8D4D4')};
+    color: ${({ variant }) => (variant === "product" ? "#777" : "#D8D4D4")};
     transition: color 0.2s;
 
     &:hover {
-      color: ${({ variant }) => (variant === 'product' ? '#007B8A' : '#00BCD4')};
-      /* color: #00BCD4; */
+      color: ${({ variant }) =>
+        variant === "product" ? "#007B8A" : "#00BCD4"};
     }
   }
 `;

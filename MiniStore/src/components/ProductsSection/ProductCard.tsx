@@ -56,7 +56,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </ImageWrapper>
         <Info>
           <ProductName>{name}</ProductName>
-          <ProductPrice>{Number(price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</ProductPrice>
+          <ProductPrice>{Number(price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+          </ProductPrice>
+
         </Info>
       </CardWrapper>
     </motion.div>

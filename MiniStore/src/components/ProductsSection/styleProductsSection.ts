@@ -33,7 +33,7 @@ export const BtnGoShop = styled.button`
 // Estilo dos Items & Slider
 
 export const ItemsSliderWrapper = styled.section`
-    width: 15.375rem;
+    max-width: 15.375rem;
     height: auto;
     ${mixins.flexJustifyCenterWrap}
     padding: .5rem;
@@ -46,18 +46,12 @@ export const CardWrapper = styled.div`
   height: auto;
 
   ${mixins.flexColumn}
+  margin: 0 auto;
 
   margin-top: 0.5rem;
   overflow: hidden;
   padding: .2rem;
 
-    @media ${media.galaxyS}{
-      margin-left: 3rem;
-    }
-
-    @media ${media.mobileS}{
-      margin-left: 2rem;
-    }
 `;
 
 export const ProductImage = styled.img`
@@ -71,21 +65,17 @@ export const ProductImage = styled.img`
 export const Info = styled.div`
     width: 100%;
     ${mixins.flexSpaceBetween}
+    padding: 0 0.5rem;
 `;
 
 export const ProductName = styled.p`
-    font-size: clamp(0.9rem, 1vw + 0.4rem, 1.1rem);
+    font-size: clamp(0.9rem, 1vw + 0.4rem, 1rem);
     max-width: 7.0rem;
     height: auto;
     font-weight: 600;
     overflow: hidden;
     text-align: left;
     ${colors.title}
-
-    //ipadMini: "820px"
-    @media ${media.ipadMini} {
-      max-width: 5.0rem;
-    }
 `;
 
 export const ProductPrice = styled.span`

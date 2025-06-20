@@ -1,8 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-
-// import { useNavigate } from 'react-router-dom';
+import { FaTrash } from 'react-icons/fa';
 import { useCart } from '../../context/CartContext';
-import type { Product } from '../../types/ProductTypes'; // Certifique-se de que o caminho está correto
+import type { CartModalProps } from './interfaceCartModal'; 
 import {
   Overlay,
   ModalBox,
@@ -10,28 +9,17 @@ import {
   ProductList,
   ProductItem,
   ProductImage,
-  ProductInfo,
+  ProductCenterContent,
   FooterButtons,
   Button,
+  CloseButton,
+  DeleteButton,
 } from './styleCartModal'
 
-// interface Product {
-//   id: string | number;
-//   name: string;
-//   image: string;
-//   price: number;
-//   quantity: number;
-// }
-
-interface CartModalProps {
-  isVisible: boolean;
-  onClose: () => void;
-  product?: Product | null | undefined;
-}
 
 const CartModal: React.FC<CartModalProps> = ({ isVisible, onClose }) => {
-  const { cart } = useCart();
-  // const navigate = useNavigate();
+  const { cart, removeFromCart } = useCart();
+
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Fechar modal se clicar fora dele (no overlay)
@@ -57,6 +45,7 @@ const CartModal: React.FC<CartModalProps> = ({ isVisible, onClose }) => {
   return (
     <Overlay isVisible={isVisible}>
       <ModalBox ref={modalRef} isVisible={isVisible}>
+        <CloseButton onClick={onClose}>×</CloseButton>
 
         <Title>
           Produto(s) adicionado(s):
@@ -66,33 +55,36 @@ const CartModal: React.FC<CartModalProps> = ({ isVisible, onClose }) => {
           {cart.map(item => (
             <ProductItem key={item.id}>
               <ProductImage src={item.image} alt={item.name} />
-              <ProductInfo>
+              <ProductCenterContent>
                 <div><strong>{item.name}</strong></div>
-                {/* <div key={item.id}>
-                  Preço: {item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</div> */}
-                  <div>
-                    Preço: {item.price != null
-                      ? item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-                      : 'R$ 0,00'}
-                  </div>
+                <div>
+                  Preço: {item.price != null
+                    ? item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+                    : 'R$ 0,00'}
+                </div>
                 <div>Quantidade: {item.quantity}</div>
-              </ProductInfo>
+              </ProductCenterContent>
+
+              <DeleteButton onClick={() => removeFromCart(item.id)} title="Remover item">
+                <FaTrash />
+              </DeleteButton>
+
             </ProductItem>
           ))}
         </ProductList>
 
         <FooterButtons>
 
-          <Button 
-            variant="primary" 
+          <Button
+            variant="primary"
             onClick={() => window.open('/cart', '_blank')}>
             Ver Carrinho
           </Button>
 
           <Button
-            variant="secondary" 
+            variant="secondary"
             onClick={() => window.open('/checkout', '_blank')}>
-              Comprar Agora
+            Comprar Agora
           </Button>
 
         </FooterButtons>

@@ -1,97 +1,34 @@
 import styled from "styled-components";
 // import { theme } from "../../styles/theme";
-import { media, mixins } from "../../styles/theme/media";
+import { media, mixins, colors } from "../../styles/theme/media";
 
 export const Conteiner = styled.section`
-    /* ${mixins.flexJustifyCenterColumn} */
     max-width: 49.1rem;
     width: 100%;
-    /* margin-top: 80px; */
-    
-    /* background-color: blue; */
-
-    //ipadMini 820px
-    @media ${media.ipadMini}{
-      width: 80%;
-    }
-    //tablet 768px
-    @media ${media.tablet}{
-      width: 84%;
-    }
-
-    //smallTablet 526px
-    @media ${media.smallTablet}{
-      width: 100%;
-      /* min-width: 39.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
-    //pixel7a 427px
-    @media ${media.pixel7a}{
-      width: 100%;
-      /* min-width: 49.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
-    //fold 426px
-    @media ${media.fold}{
-      width: 100%;
-      /* min-width: 49.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
-    //fold 426px
-    @media ${media.iphoneXR}{
-      width: 100%;
-      /* margin-left: 1rem; */
-      /* min-width: 49.1rem; */
-      /* padding: 1rem; */
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
-      /* background-color: orange; */
-    }
+    overflow: hidden;
+    padding: 0 0.5rem;
 `;
 
 export const ResultsSortingConteiner = styled.div`
     ${mixins.flexSpaceBetween}
     width: 100%;
-    /* background-color: orchid; */
 `;
 
 export const ResultsTitle = styled.h3`
-    color: #E0E0E0;
+    ${colors.title}
     font-size: 1rem;
-    /* width: 100%; */
-    /* background-color: orange; */
 
      //fold 426px
     @media ${media.fold}{
       font-size: .8rem;
       text-align: left;
-      /* width: 7.7rem; */
     }
 `;
 
 export const SortingTexto = styled.p`
     ${mixins.flexCenter}
+    ${colors.accent}
     font-size: 1rem;
-    color: #00BCD4;
-
-    /* background-color: blue; */
 
     //fold 426px
     @media ${media.fold}{
@@ -102,63 +39,23 @@ export const SortingTexto = styled.p`
 // estilos do card dos produtos
 
 export const CardContainer = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${mixins.flexCenter}
   gap: 16px;
   flex-wrap: wrap;
-     /* background-color: orange; */
-  /* background-color: olive; */
 
      //fold 426px
     @media ${media.fold}{
       width: 100%;
       gap: 5px;
-      /* padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: orange; */
     }
      //fold 426px
     @media ${media.iphoneXR}{
       width: 100%;
       gap: 0;
       padding: 0;
-      /* padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: orange; */
     }
-
-      //galaxyS 360px
-    @media ${media.galaxyS}{
-      width: 80%;
-      padding: 0;
-      align-items: start;
-      justify-content: left;
-      overflow: hidden;
-      margin-left: -13px;
-      /* background-color: black; */
-    }
-      //fold 320px
-    @media ${media.mobileS}{
-      width: 80%;
-      padding: 0;
-      align-items: start;
-      justify-content: left;
-      overflow: hidden;
-      margin-left: 7px;
-      /* background-color: black; */
-    }
+ 
 `;
-
-// export const ProductsCardConteiner = styled.div`
-
-// `;
 
 export const OutOfStockBadge = styled.div`
   position: absolute;
@@ -173,18 +70,16 @@ export const OutOfStockBadge = styled.div`
 `;
 
 export const PaginationWrapper = styled.div`
-    width: 100%; /* ocupa toda a largura */
-    display: flex;
-    justify-content: center;
-    align-items: center; /* vertical opcional */
+    width: 100%; 
+    ${mixins.flexCenter}
+    flex-wrap: wrap;
     gap: 8px;
     margin: 32px 0;
-    flex-wrap: wrap;
 `;
 
 export const PageButton = styled.button<{ active?: boolean }>`
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.375rem;
   border: 1px solid ${({ active }) => (active ? '#00BCD4' : '#ccc')};
   background-color: ${({ active }) => (active ? '#00BCD4' : '#fff')};
   color: ${({ active }) => (active ? '#fff' : '#333')};

@@ -1,13 +1,10 @@
-
 import { useEffect, useState } from "react";
 import { FiSearch, FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import postData  from '../../data/PostData';
+import postData from '../../data/PostData';
 import { product } from "../../data/productsData";
 import type { ProductTypes } from "../../types/ProductTypes";
-
-
-
+import type { ShopSidebarProps, FilterData } from './typeShopsidebar'
 import {
   Conteiner,
   SearchContainer,
@@ -20,17 +17,7 @@ import {
   CloseButton
 } from "./styleShopsidebar";
 
-type FilterData = {
-  categories: string[];
-  tags: string[];
-  brands: string[];
-  prices: string[];
-};
-
-
 const { latestPosts } = postData;
-
-
 const FilterBlock = ({
   title,
   items,
@@ -45,17 +32,17 @@ const FilterBlock = ({
   <FilterGroup className={title.toLowerCase()}>
     <Title>{title}</Title>
     <div className="scroll-wrapper">
-    <List>
-      {items.map((item, index) => (
-        <ListItem
-          key={index}
-          active={item === activeItem}
-          onClick={() => onItemClick(item)}
-        >
-          {item}
-        </ListItem>
-      ))}
-    </List>
+      <List>
+        {items.map((item, index) => (
+          <ListItem
+            key={index}
+            active={item === activeItem}
+            onClick={() => onItemClick(item)}
+          >
+            {item}
+          </ListItem>
+        ))}
+      </List>
     </div>
   </FilterGroup>
 );
@@ -93,35 +80,6 @@ const SocialLinks = () => (
   </FilterGroup>
 );
 
-// const Shopsidebar = ({
-//   isOpen,
-//   setIsOpen,
-//   context = "shop" // pode ser "shop" ou "blog"
-// }: {
-//   isOpen: boolean;
-//   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-//   context?: "shop" | "blog";
-// }) => {
-  
-type ShopSidebarProps = {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  context?: "shop" | "blog";
-  activeFilter?: {
-    categories: string;
-    tags: string;
-    brands: string;
-    prices: string;
-  };
-  setActiveFilter?: React.Dispatch<
-    React.SetStateAction<{
-      categories: string;
-      tags: string;
-      brands: string;
-      prices: string;
-    }>
-  >;
-};
 
 const Shopsidebar = ({
   isOpen,
@@ -131,53 +89,53 @@ const Shopsidebar = ({
   setActiveFilter,
 }: ShopSidebarProps) => {
 
-const [filters, setFilters] = useState<FilterData>({
+  const [filters, setFilters] = useState<FilterData>({
     categories: [],
     tags: [],
     brands: [],
     prices: [],
   });
- 
+
   useEffect(() => {
-  const posts = postData.posts;
+    const posts = postData.posts;
 
-  const categories = Array.from(
-    new Set(posts.map((post) => post.category))
-  );
+    const categories = Array.from(
+      new Set(posts.map((post) => post.category))
+    );
 
-  const tags = Array.from(
-    new Set(posts.flatMap((post) => post.tags || []))
-  );
+    const tags = Array.from(
+      new Set(posts.flatMap((post) => post.tags || []))
+    );
 
-  const brands = Array.from(
-    new Set(posts.map((post) => post.brand).filter(Boolean))
-  );
+    const brands = Array.from(
+      new Set(posts.map((post) => post.brand).filter(Boolean))
+    );
 
-  const priceRanges: string[]= [];
-   product.forEach((product: ProductTypes) => {
-    const price = product.price;
+    const priceRanges: string[] = [];
+    product.forEach((product: ProductTypes) => {
+      const price = product.price;
 
-    if (price < 100 && !priceRanges.includes("Abaixo de R$100")) {
-      priceRanges.push("Abaixo de R$100");
-    } else if (price >= 100 && price < 300 && !priceRanges.includes("R$100 - R$300")) {
-      priceRanges.push("R$100 - R$300");
-    } else if (price >= 300 && price < 500 && !priceRanges.includes("R$300 - R$500")) {
-      priceRanges.push("R$300 - R$500");
-    } else if (price >= 500 && !priceRanges.includes("Acima de R$500")) {
-      priceRanges.push("Acima de R$500");
-    }
-  });
+      if (price < 100 && !priceRanges.includes("Abaixo de R$100")) {
+        priceRanges.push("Abaixo de R$100");
+      } else if (price >= 100 && price < 300 && !priceRanges.includes("R$100 - R$300")) {
+        priceRanges.push("R$100 - R$300");
+      } else if (price >= 300 && price < 500 && !priceRanges.includes("R$300 - R$500")) {
+        priceRanges.push("R$300 - R$500");
+      } else if (price >= 500 && !priceRanges.includes("Acima de R$500")) {
+        priceRanges.push("Acima de R$500");
+      }
+    });
 
 
-  setFilters({
-    categories: ["All", ...categories],
-    tags,
-    brands,
-    prices: priceRanges,
-  });
-}, []);
+    setFilters({
+      categories: ["All", ...categories],
+      tags,
+      brands,
+      prices: priceRanges,
+    });
+  }, []);
 
- return (
+  return (
     <Conteiner className={isOpen ? "open" : ""}>
       <CloseButton onClick={() => setIsOpen(false)}>✕</CloseButton>
 

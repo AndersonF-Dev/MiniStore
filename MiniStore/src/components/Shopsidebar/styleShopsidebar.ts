@@ -1,31 +1,29 @@
 import styled from "styled-components";
-// import { theme } from "../../styles/theme";
-// import { media, mixins } from "../../styles/theme/media";
-
 
 export const Conteiner = styled.aside`
   position: fixed;
-  /* margin-top: 80px; */
   top: 0;
   left: -100%;
-  width: 250px;
+
+  width: 15.625rem;
   height: 100vh;
-  background-color: rgba(58, 58, 58, 0.79);
-  padding: 20px;
+  background-color: rgba(58, 58, 58, 0.91);
+
+  padding: 1.25rem;
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
   overflow-x: hidden;
-  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
 
   &.open {
     left: 0;
   }
 
-  @media (min-width: 821px) {
+  @media (min-width: 768px) {
     position: static;
+
     height: auto;
-    width: 250px;
+    width: 15.625rem;
     overflow: visible;
     left: 0;
     box-shadow: none;
@@ -36,16 +34,16 @@ export const Conteiner = styled.aside`
 export const SearchContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 300px;
-  margin-bottom: 16px;
+  max-width: 18.75rem;
+  margin-bottom: 1rem;
 `;
 
 export const Input = styled.input`
   width: 100%;
-  padding: 10px 40px 10px 12px;
+  padding: 0.625rem 2.5rem 0.625rem 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 15px;
-  font-size: 16px;
+  border-radius: 0.938rem;
+  font-size: 1rem;
   outline: none;
 `;
 
@@ -55,69 +53,67 @@ export const Button = styled.button`
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  background: #00BCD4;
-  padding: 8px 20px;
-  border-radius: 15px;
+  background: #00bcd4;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.938rem;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #555;
   transition: background 0.3s ease-in-out;
 
-  &:hover{
-     background:rgb(44, 214, 236);
+  &:hover {
+    background: rgb(44, 214, 236);
   }
 `;
 
 export const FilterGroup = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 
   &.categorias .scroll-wrapper,
   &.tags .scroll-wrapper {
-    max-height: 200px; // ajuste conforme necessário
+    max-height: 12.5rem; 
     overflow-y: auto;
-    padding-right: 4px;
+    padding-right: 0.25rem;
   }
 
   .scroll-wrapper::-webkit-scrollbar {
-    width: 6px;
+    width: 0.375rem;
   }
 
   .scroll-wrapper::-webkit-scrollbar-thumb {
     background-color: #888;
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
 
   .scroll-wrapper::-webkit-scrollbar-track {
     background-color: transparent;
   }
-
 `;
 
 export const Title = styled.h3`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   text-transform: uppercase;
-  color: #E0E0E0;
+  color: #e0e0e0;
 `;
 
 export const List = styled.ul`
-    text-align: left;
-    list-style: none;
-    padding-left: 0;
+  text-align: left;
+  list-style: none;
+  padding-left: 0;
 `;
 
 export const ListItem = styled.li<{ active?: boolean }>`
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   cursor: pointer;
-  /* color: #B5B5B5; */
   transition: color 0.3s;
   color: ${({ active }) => (active ? "#00BCD4" : "#B5B5B5")};
   font-weight: ${({ active }) => (active ? "bold" : "normal")};
 
   &:hover {
-    color: #00BCD4;
+    color: #00bcd4;
   }
 `;
 
@@ -127,33 +123,37 @@ export const ToggleButton = styled.button`
   @media (max-width: 820px) {
     display: block;
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 1.25rem;
+    left: 1.25rem;
     z-index: 1000;
-    background: #00BCD4;
+    background: #00bcd4;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 0.625rem 0.938rem;
+    border-radius: 0.313rem;
     font-weight: bold;
     cursor: pointer;
   }
 `;
-
 
 export const CloseButton = styled.button`
   display: block;
   margin-left: auto;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 1.313rem;
   cursor: pointer;
-  color: #B5B5B5;
-  margin-bottom: 20px;
+  color: #b5b5b5;
+  margin-bottom: 0.313rem;
+  transition: transform 1.2s ease-in-out;
 
-  @media (min-width: 821px) {
+  &:hover {
+    transform: rotate(360deg);
+    color: #00bcd4;
+    font-weight: bold;
+  }
+
+  @media (min-width: 800px) {
     display: none;
   }
 `;
-
-
